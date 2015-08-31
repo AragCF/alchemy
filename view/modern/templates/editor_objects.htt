@@ -1,0 +1,862 @@
+<block_typepicture_1>
+ <img src="%imgfolder%/telephone.png">
+</block_typepicture_1>
+<block_typepicture_2>
+ <img src="%imgfolder%/hand-shake.png">
+</block_typepicture_2>
+<block_typepicture_3>
+ <img src="%imgfolder%/mail.png">
+</block_typepicture_3>
+<block_typepicture_4>
+ <img src="%imgfolder%/home-share.png">
+</block_typepicture_4>
+<block_typepicture_5>
+ <img src="%imgfolder%/building.png">
+</block_typepicture_5>
+<block_typepicture_6>
+ <img src="%imgfolder%/building.png">
+</block_typepicture_6>
+
+<table class=editor id="AddObject">
+ <tr>
+  <td>
+   <table>
+    <col width="200"><col width="250"><col width="200"><col>
+    <tr class=hidden>
+     <td class=l colspan=2>
+      <h4 id=AddProject_Caption><ru>Создать запись</ru><en>Create new record</en></h4>
+     </td>
+    </tr>
+    <tr class="hidden">
+     <td class=r>
+      <b>ID:</b>
+     </td>
+     <td class=l>
+      <cinputs ID>%ID%</cinputs>
+     </td>
+     <td class=r>
+      <b>UserID:</b>
+     </td>
+     <td class=l id='UserID_static'>%UserID%</td>
+     <td class="r" id="debug">
+      
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Date and time</en><ru>Дата, время</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs DateTarget>%DateTarget%</cinputs>
+     </td>
+     <td class=r>
+      <b><en>Manager</en><ru>Менеджер</ru>:</b>
+     </td>
+     <td class=l colspan=4>
+      <block_userselector>
+       <select class=filteritem id=UserID>
+        <loop_users>
+         <option id="%ID%" %selected%>%Firstname% %Surname%</option>
+        </loop_users>
+       </select>
+      </block_userselector>
+      <block_nouserselector>
+       %Firstname% %Surname%
+      </block_nouserselector>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Phone</en><ru>Номер телефона</ru>:</b>
+     </td>
+     <td class=l>
+      <block_phone_editor>
+       <cinputs Phone>%Phone%</cinputs>
+      </block_phone_editor>
+      <block_phone_hidden>
+       <ru>Скрыт</ru><en>Hidden</en>
+      </block_phone_hidden>
+     </td>
+     <td class=r>
+      <b>
+       <ru>Источник (площадка)</ru><en>Source</en>:
+      </b>
+     </td>
+     <td class=l colspan=4>
+      <p>
+       <select class=filteritem id=SourceID>
+        <loop_customersources>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_customersources>
+       </select>
+      </p>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Contact name</en><ru>Имя контактного лица</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs ContactName>%ContactName%</cinputs>
+     </td>
+     <td class=r>
+      <b><en>Contact email</en><ru>E-mail</ru>:</b>
+     </td>
+     <td class=l colspan=4>
+      <cinputs ContactEmail>%ContactEmail%</cinputs>
+     </td>
+    </tr>
+    
+    <tr class=hidden>
+     <td class=r>
+      <b>
+       <ru>Направление</ru>
+       <en>Direction</en>
+      </b>
+     </td>
+     <td class=l colspan=4>
+      <p>
+       <select class=filteritem id=DirectionID>
+        <loop_calldirections>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_calldirections>
+       </select>
+      </p>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Cost</en><ru>Цена с учётом комиссии</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs Cost>%Cost%</cinputs> руб.
+     </td>
+     <td class=r>
+      <b>
+       <ru>Способ оплаты</ru><en>MethodOfPaymentID</en>:
+      </b>
+     </td>
+     <td class=l colspan=4>
+      <p>
+       <select class=filteritem id=MethodOfPaymentID>
+        <loop_methodsofpayment>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_methodsofpayment>
+       </select>
+       %MortgageText%
+      </p>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b>
+       <ru>Подтип звонившего</ru><en>Customer subtype</en>:
+      </b>
+     </td>
+     <td class=l>
+      <p>
+       <select class="filteritem" id="CustomerSubtypeID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+        <loop_customersubtypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_customersubtypes>
+       </select>
+      </p>
+     </td>
+     
+     <td class=fieldname>
+      <p><b>Посредник:</b></p>
+     </td>
+     <td class=fieldvalue colspan=4>
+      <p>
+       <select id="MediatorID">
+        <loop_mediators>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_mediators>
+       </select>
+      </p>
+     </td>
+     
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+     <td class=r>
+      <b>
+       <ru>Рынок</ru><en>Market</en>:
+      </b>
+     </td>
+     <td class=l>
+      <p>
+       <select class="filteritem" id="MarketID">
+        <loop_markets>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_markets>
+       </select>
+      </p>
+     </td>
+     
+     <td class=r>
+      <b>Размер комиссии:</b>
+     </td>
+     <td class=l>
+      <cinputs AgentFee>%AgentFee%</cinputs>
+     </td>
+     
+     <td class=r>
+      <b>Цена за м<sup>2</sup>:</b>
+     </td>
+     <td class=l>
+      <cinputs CostPerMeter>%CostPerMeter%</cinputs>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>District</en><ru>Район</ru>:</b>
+     </td>
+     <td class=l>
+      <p>
+       <select class="filteritem" id="DistrictID">
+        <loop_districts>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_districts>
+       </select>
+      </p>
+     </td>
+     <td class=r>
+      <b><en>Address</en><ru>Адрес</ru>:</b>
+     </td>
+     <td class=l colspan=3>
+      <cinputs Address>%Address%</cinputs>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Exchange option</en><ru>Обменный вариант</ru>:</b>
+     </td>
+     <td class=l colspan=6>
+      <cinputs ExchangeOption>%ExchangeOption%</cinputs>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Target audience</en><ru>Целевая аудитория</ru>:</b>
+     </td>
+     <td class=l colspan=6>
+      <cinputs TargetAudience>%TargetAudience%</cinputs>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Problem</en><ru>Проблема с объектом</ru>:</b>
+     </td>
+     <td class=l colspan=6>
+      <cinputs Problem>%Problem%</cinputs>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <table>
+    <tr>
+     <td class=l colspan=4 id="objectdetails_">
+      
+<input type=hidden size=5 value="%ID%" id="SubID">
+<table class="groupborder fullwidth">
+ <tr class=vtop>
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class="objectdetails">
+     <tr class=objectdetails>
+      <td colspan=8>
+       <div class=groupheader><ru>Характеристики дома</ru><en>House information</en></div>
+      </td>
+     </tr>
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Этаж:</b>
+      </td>
+      <td class="l">
+       <cinputs Floor>%Floor%</cinputs>
+      </td>
+      <td class="r">
+       <b>Этажей:</b>
+      </td>
+      <td class="l">
+       <cinputs Floors>%Floors%</cinputs>
+      </td>
+      
+      <td class=r>
+       <b>Подъездов:</b>
+      </td>
+      <td class=l>
+       <cinputs Entrances>%Entrances%</cinputs>
+      </td>
+      
+      <td class=r>
+       <b>Кол-во лифтов:</b>
+      </td>
+      <td class=l>
+       <p><input type=text size=5 value="%Elevators%" id="Elevators"></p>
+      </td>
+     </tr>
+     </tr>
+    </table>
+    
+    <table class="objectdetails">
+     <tr class=objectdetails>
+     <tr>
+      <td class="r">
+       <b>Тип планировки:</b>
+      </td>
+      <td class="l">
+       <select id="HouseTypeID">
+        <loop_housetypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_housetypes>
+       </select>
+      </td>
+      
+      <td class="r">
+       <b>Тип перекрытий:</b>
+      </td>
+      <td class="l">
+       <select id="OverlappingTypeID">
+        <loop_overlappingtypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_overlappingtypes>
+       </select>
+      </td>
+      <td class=r>
+       <b><en>Completion date (built year)</en><ru>Срок сдачи (год постройки)</ru>:</b>
+      </td>
+      <td class=l>
+       <select class="filteritem" id="CompletionDateQuarter">
+        <option id="0">Неизвестно</option>
+        <loop_quarters>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_quarters>
+       </select>
+      </td>
+      <td class=r>
+       кв.
+      </td>
+      <td class=l>
+       <cinputs CompletionDateYear>%CompletionDateYear%</cinputs>
+       года. %CompletionDateComment%
+      </td>
+     </tr>
+    </table>
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldvalue>
+       <p>
+        <fcb Security %Security%><en>Security</en><ru>Охрана</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Concierge %Concierge%><en>Concierge</en><ru>Консъерж</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb OperationService %OperationService%><en>OperationService</en><ru>Эксплуатационная служба</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Chute %Chute%><en>Chute</en><ru>Мусоропровод</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Gas %Gas%><en>Gas</en><ru>Газ</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Parking %Parking%><en>Parking</en><ru>Парковка</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb TechnicalFloor %TechnicalFloor%><en>TechnicalFloor</en><ru>Тех. этаж</ru></fcb>
+       </p>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr class=vtop>
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class=objectdetails id="apartments">
+     <tr class=objectdetails>
+      <td colspan=6>
+       <div class=groupheader><ru>Характеристики квартиры</ru><en>Apartment information</en></div>
+      </td>
+     </tr>
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Комнат:</b>
+      </td>
+      <td class="l">
+       <cinputs RoomsTotal>%RoomsTotal%</cinputs>
+      </td>
+      
+ 	    <td class="r">
+       <b>Площадь общая:</b>
+      </td>
+      <td class="l">
+       <cinputs SpaceTotal>%SpaceTotal%</cinputs> %SpaceTotalText%
+      </td>
+      
+ 	    <td class="r">
+       <b>Площадь кухни:</b>
+      </td>
+      <td class="l">
+       <cinputs SpaceKitchen>%SpaceKitchen%</cinputs> %SpaceKitchenText%
+      </td>
+     </tr>
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Изол. помещений:</b>
+      </td>
+      <td class="l">
+       <cinputs RoomsIsolated>%RoomsIsolated%</cinputs>
+      </td>
+      
+ 	    <td class="r">
+       <b>Площадь жилая:</b>
+      </td>
+      <td class="l">
+       <cinputs SpaceLiving>%SpaceLiving%</cinputs> %SpaceLivingText%
+      </td>
+      
+ 	    <td class="r">
+       <b>Кол-во балконов, лоджий:</b>
+      </td>
+      <td class="l">
+       <cinputs Balconies>%Balconies%</cinputs>
+      </td>
+     </tr>
+     
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Вид планировки:</b>
+      </td>
+      <td class="l">
+       <select id="LayoutTypeID">
+        <loop_layouttypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_layouttypes>
+       </select>
+      </td>
+      
+ 	    <td class="r">
+       <b>Тип санузла:</b>
+      </td>
+      <td class="l">
+       <select id="ToiletTypeID">
+        <loop_toilettypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_toilettypes>
+       </select>
+      </td>
+      
+ 	    <td class="r">
+       <b>Состояние:</b>
+      </td>
+      <td class="l">
+       <select id="ConditionID">
+        <loop_conditions>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_conditions>
+       </select>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr class="vtop hidden">
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldname colspan=6>
+       <div class=groupheader><ru>Дополнительная информация</ru><en>Additional information</en></div>
+      </td>  
+     </tr>
+     
+     <tr class=objectdetails>
+      <td class=r>
+       <b>Источник:</b>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <select id="SourceID">
+         <loop_sources>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_sources>
+        </select>
+       </p>
+      </td>
+      
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ 
+ 
+ <tr class=vtop>
+  <td class=vtop>
+   <div class="groupcontainer" id="newbuildings_decoration">
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldname colspan=8>
+       <div class=groupheader><ru>Ремонт и отделка</ru><en>Decoration</en></div>
+      </td>
+     </tr>
+     
+     <tr class=objectdetails>
+      <td class=r>
+       <b>Отделка:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="FinishingID">
+         <loop_finishings>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_finishings>
+        </select>
+        %FinishingText%
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Пол:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="FloorSurfaceID">
+         <loop_floorsurfaces>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_floorsurfaces>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Плита:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="StoveTypeID">
+         <loop_stovetypes>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_stovetypes>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Двери:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="DoorsTypeID">
+         <loop_doorstypes>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_doorstypes>
+        </select>
+       </p>
+      </td>
+     </tr>
+     
+     <tr>
+      <td class=r>
+       <b>Стены:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="WallsSurfaceID">
+         <loop_wallssurfaces>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_wallssurfaces>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Материал стен:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="WallsMaterialID">
+         <loop_wallsmaterials>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_wallsmaterials>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Сантехника:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="BathroomEquipmentID">
+         <loop_bathroomequipments>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_bathroomequipments>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Окна:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="WindowsTypeID">
+         <loop_windowstypes>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_windowstypes>
+        </select>
+       </p>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ 
+ <tr class=vtop>
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldname colspan=6>
+       <div class=groupheader><ru>Дополнительная информация</ru><en>Additional information</en></div>
+      </td>  
+     </tr>
+     <tr class=objectdetails>
+      <td class=r>
+       <b>Источник права:</b>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <select id="RightsSourceID">
+         <loop_rightssources>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_rightssources>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b><ru>Форма передачи права</ru><en>Form of transmission of right</en>:</b>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <select id="RightsTransmissionID">
+         <loop_rightstransmissions>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_rightstransmissions>
+        </select>
+       </p>
+       %RightsTransmissionText%
+      </td>
+      
+      <td class=r>
+       <b><ru>Номер договора</ru><en>Agreement #</en>:</b>
+      </td>
+      <td class=fieldvalue>
+       <cinputs AgreementNumber>%AgreementNumber%</cinputs>
+      </td>
+     </tr>
+     <tr>
+      <td class=r>
+       <b><en>Residential complex name</en><ru>Наименование ЖК</ru>:</b>
+      </td>
+      <td class=l>
+       <cinputs ResidentialComplexName>%ResidentialComplexName%</cinputs>
+      </td>
+      
+      <td class=r>
+       <b><en>Developer</en><ru>Застройщик</ru>:</b>
+      </td>
+      <td class=l>
+       <cinputs Developer>%Developer%</cinputs>
+      </td>
+      
+      <td class=r>
+       <b><ru>Кадастровый номер</ru><en>Kad number</en>:</b>
+      </td>
+      <td class=fieldvalue>
+       <cinputs KadNumber>%KadNumber%</cinputs>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+</table>
+      
+      
+      
+      
+     </td>
+    </tr>
+    
+    <tr class=t>
+     <td class=r>
+      <b><en>Comments</en><ru>Комментарии</ru>:</b>
+     </td>
+     <td class=l colspan=3>
+      <ctxts Status>%Status%</ctxts>
+     </td>
+    </tr>
+    
+    
+    <tr class=t id=nopadding>
+     <td class=r rowspan=7>
+      
+     </td>
+     <td class=l>
+      <fcb TargetContact %TargetContact%>Контакт с целью</fcb>
+     </td>
+     <td class=l>
+      <fcb ObjectShow %ObjectShow%>Показ объекта</fcb>
+     </td>
+     <td class=l>
+      <fcb DepositReceived %DepositReceived%>Задаток получен</fcb>
+     </td>
+    </tr>
+    <tr class=r id=nopadding>
+     <td class=l>
+      <fcb TargetMeeting %TargetMeeting%>Встреча на объекте</fcb>
+     </td>
+     <td class=l>
+      <fcb TargetAgreed %TargetAgreed%>Собственник согласен работать</fcb>
+     </td>
+     <td class=l>
+      <fcb Handshake %Handshake%>Сделка совершена</fcb>
+     </td>
+    </tr>
+    <tr class=r id=nopadding>
+     <td class=l>
+      <fcb OfficeVisit %OfficeVisit%>Посещение офиса</fcb>
+     </td>
+     <td class=l>
+      <fcb HasAgreement %HasAgreement%>Договор заключен</fcb>
+     </td>
+     <td class=l>
+      <fcb GiftsGiven %GiftsGiven%>Подарки вручены</fcb>
+     </td>
+    </tr>
+    <tr class=r id=nopadding>
+     <td class=l colspan=2>
+      <fcb PhoneDenied %PhoneDenied%>Отказ от разговора по телефону</fcb>
+     </td>
+     <td class=l>
+      <fcb HasCertificate %HasCertificate%>Есть свидетельство</fcb>
+     </td>
+    </tr>
+    <tr class=r id=nopadding>
+     <td class=l>
+      <fcb MeetingDenied %MeetingDenied%>Отказ от встречи</fcb>
+     </td>
+     <td class=l>
+      <fcb ServiceDenied %ServiceDenied% Может&nbsp;быть&nbsp;дорого,&nbsp;может&nbsp;быть&nbsp;уже&nbsp;есть&nbsp;риелтор>Отказ от услуги</fcb>
+     </td>
+     <td class=l>
+      <fcb NoAgreement %NoAgreement%>Работа без договора</fcb>
+     </td>
+    </tr>
+    <tr class=r id=nopadding>
+     <td class=l>
+      <fcb SaleCanceled %SaleCanceled% Передумали&nbsp;продавать>Сняли с продажи</fcb>
+     </td>
+     <td class=l colspan=2>
+      <fcb SoldSelf %SoldSelf% Передумали&nbsp;продавать>Продали сами или другие риелторы</fcb>
+     </td>
+    </tr>
+    <tr class=r id=nopadding>
+     <td class=l>
+      <fcb CostTooHigh %CostTooHigh%>Цена завышена</fcb>
+     </td>
+     <td class=l>
+      <fcb SalePaused %SalePaused% Документы&nbsp;не&nbsp;готовы&nbsp;или&nbsp;прочие&nbsp;причины>Продажа на паузе</fcb>
+     </td>
+     <td class=l>
+      
+     </td>
+    </tr>
+    
+    
+    <tr class=t>
+     <td class=r>
+      <b><en>Status history</en><ru>История статусов</ru>:</b>
+     </td>
+     <td class=l colspan=3>
+      <table id="statuses">
+       <block_statuses>
+        <tr class=hidden><td>Дата, время</td><td>Длительность</td><td>Тип</td><td>Комментарий</td><td>Следующий шаг</td></tr>
+        <loop_statuses>
+         <tr><td class=l>%typepicture% %DateTime% %Address% (%Duration%) %Comment% -> %NextStep%</td></tr>
+        </loop_statuses>
+       </block_statuses>
+      </table>
+     </td>
+    </tr>
+    
+    <tr class=t>
+     <td class=r>
+      <b><en>New status</en><ru>Новый статус</ru>:</b>
+     </td>
+     <td class=l colspan=3>
+      <table id="NewStatus">
+       <tr><td class="r">Дата, время:</td><td class="l"><cinputs DateTime></cinputs></td><td>Тип:</td><td><select id="TypeID"><loop_statustypes><option id="%ID%" %selected%>%Description%</option></loop_statustypes></select></td><td>Длительность:</td><td><cinputs Duration_Min></cinputs></td><td>мин.</td><td><cinputs Duration_Sec></cinputs></td><td class=l>сек.</td></tr>
+       <tr><td class="r">Адрес или номер телефона:</td><td class="l" colspan=6><cinputs sAddress></cinputs></td></tr>
+       <tr><td class="r">Комментарий:</td><td class="l" colspan=6><cinputs Comment></cinputs></td></tr>
+       <tr><td class="r">Следующий&nbsp;шаг:</td><td class="l" colspan=6><cinputs NextStep></cinputs></td><td colspan=2><input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_addStatus" value="<en>Add</en><ru>Добавить</ru>"></td></tr>
+      </table>
+     </td>
+    </tr>
+    
+    
+    <tr class=hidden>
+     <td class=r>
+      
+     </td>
+     <td class=l>
+      <comctl -1  addObject task--plus.png><ru>Создать запись</ru><en>Add record</en></comctl>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>

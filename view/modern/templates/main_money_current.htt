@@ -1,0 +1,39 @@
+<block_type1><img src="%imgfolder%/plus.png"     title="<en>Income</en><ru>Приход</ru>"></block_type1>
+<block_type2><img src="%imgfolder%/minus.png" title="<en>Expenditure</en><ru>Расход</ru>"></block_type2>
+
+<ru>Количество записей</ru><en>Number of entries</en>: %numrows%
+<loop_table>
+ <table class=tableview>
+  <tr class=row1 id=tableheader>
+   <th>ID</th>
+   <th><en>Date</en><ru>Дата</ru></th>
+   <th><en>Value</en><ru>Значение</ru></th>
+   <th><en>Comment</en><ru>Пояснение</ru></th>
+   <th><en>Place Type</en><ru>Тип места</ru></th>
+   <th><en>Place Name</en><ru>Название места</ru></th>
+   <th><en>Type</en><ru>Статья</ru></th>
+   <th colspan=2><en>Tools</en><ru>Инструменты</ru></th>
+  </tr>
+  <loop_table_row>
+   <tr class=row%c%>
+    <td>%ID%</td>
+    <td>%Date%</td>
+    <td>%TypePicture% %Value%</td>
+    <td>%Content%</td>
+    <td>%PlaceType%</td>
+    <td>%PlaceName%</td>
+    <td>%Description%</td>
+    <td>
+     <comctl %ID%  editMoney pencil.png><ru>Правка</ru><en>Edit</en></comctl>
+    </td>
+    <td>
+     <comctl %ID%  deleteMoney cross-script.png><ru>Удалить</ru><en>Delete</en></comctl>
+    </td>
+   </tr>
+  </loop_table_row>
+ </table>
+</loop_table>
+
+<block_norows>
+ <table class=tableview><tr class=row0><td>Нет данных</td></tr></table>
+</block_norows>

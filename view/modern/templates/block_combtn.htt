@@ -1,0 +1,9 @@
+<a href='javascript:;' id='%id%' onclick='btn_click(this.id,"%groupid%");' title='%caption%' class="%subtype%">
+ <table>
+  <tr>
+   <td class=td_1 id='c%id%'>
+    %caption%
+   </td>
+  </tr>
+ </table>
+</a>

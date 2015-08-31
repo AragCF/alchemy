@@ -1,0 +1,152 @@
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l>
+   <comctl -1  newDiary plus.png><ru>Добавить запись</ru><en>Add new record</en></comctl>
+  </td>
+ </tr>
+</table>
+
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=20%><col width=60%><col width=20%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+ 
+<block_popupdefault>
+<table class=editor id=AddDiary>
+ <tr class=hidden>
+  <td class=l colspan=2>
+   <h4 id=AddProject_Caption><ru>Создать запись в дневнике</ru><en>Create new record in the diary</en></h4>
+  </td>
+ </tr>
+ <tr class=hidden_>
+  <td class=r>
+   <b>ID:</b>
+  </td>
+  <td class=l>
+   <cinputs ID>%ID%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>DateTarget</en><ru>Дата записи</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs DateTarget>%DateTarget%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Description</en><ru>Описание дня</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts Description>%Description%</ctxts>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Plan</en><ru>План на этот день</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts Plan>%Plan%</ctxts>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>What's done</en><ru>Что сделано</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts WhatsDone>%WhatsDone%</ctxts>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>What's not done</en><ru>Что не сделано</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts WhatsNotDone>%WhatsNotDone%</ctxts>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Insights</en><ru>Выводы, открытия, инсайты</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts Insights>%Insights%</ctxts>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Home work</en><ru>Домашняя работа</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts HomeWork>%HomeWork%</ctxts>
+  </td>
+ </tr>
+ 
+ <tr class=hidden>
+  <td class=r>
+   
+  </td>
+  <td class=l>
+   <comctl -1  addDiary task--plus.png><ru>Создать запись</ru><en>Add record</en></comctl>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   
+  </td>
+ </tr>
+</table>
+</block_popupdefault>
+
+
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td class=l id=result>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"    value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"       value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"  value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"     value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"     value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"      value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+

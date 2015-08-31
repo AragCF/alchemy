@@ -1,0 +1,6 @@
+<table href='javascript:;' id='%id%' onclick='fb_click(this.id,"%groupid%");' class="afcb">
+ <tr>
+  <td><div class='%ctltype%' id='p%id%'></div></td>
+  <td class=l>%caption%</td>
+ </tr>
+</table>

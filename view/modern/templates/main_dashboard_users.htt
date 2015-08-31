@@ -1,0 +1,80 @@
+<h2>%caption%</h2>
+
+<table class="tbl_dashboard">
+ <tr>
+  <td>
+   <table>
+    <col width=200px>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <tr><td colspan=10><h3>Собственники/Объекты</h3></td></tr>
+    <tr><th></th><th colspan=2>Кол-во</th><th colspan=2>Контакт с целью</th><th colspan=2>Посещение офиса</th><th colspan=2>Показ объекта</th><th colspan=2>Согласен работать</th><th colspan=2>Договор заключен</th><th colspan=2>Договор составлен</th><th colspan=2>Задаток получен</th><th colspan=2>Сделка совершена</th><th colspan=2>Подарки вручены</th></tr>
+    <loop_objectsources>
+     <tr class="tr_%total%">
+      <td>%Description%</td>
+      <td>%total_c%</td><td class="total_p">%total_p%%</td>
+      <td>%TargetContact_c%  </td><td class="total_p">%TargetContact_p%%</td>
+      <td>%TargetMeeting_c%  </td><td class="total_p">%TargetMeeting_p%%</td>
+      <td>%OfficeVisit_c%    </td><td class="total_p">%OfficeVisit_p%%</td>
+      <td>%ObjectShow_c%     </td><td class="total_p">%ObjectShow_p%%</td>
+      <td>%TargetAgreed_c%   </td><td class="total_p">%TargetAgreed_p%%</td>
+      <td>%HasAgreement_c%   </td><td class="total_p">%HasAgreement_p%%</td>
+      <td>%DepositReceived_c%</td><td class="total_p">%DepositReceived_p%%</td>
+      <td>%Handshake_c%      </td><td class="total_p">%Handshake_p%%</td>
+      <td>%GiftsGiven_c%     </td><td class="total_p">%GiftsGiven_p%%</td>
+     </tr>
+    </loop_objectsources>
+   </table>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>
+   <table>
+    <col width=200px>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <tr><td colspan=10><h3>Покупатели</h3></td></tr>
+    <tr>
+     <th></th>
+     <th colspan=2>Кол-во</th>
+     <th colspan=2>Контакт с целью</th>
+     <th colspan=2>Посещение офиса</th>
+     <th colspan=2>Показ объекта</th>
+     <th colspan=2>Договор заключен</th>
+     <th colspan=2>Задаток получен</th>
+     <th colspan=2>Сделка совершена</th>
+    </tr>
+    <loop_customersources>
+     <tr class="tr_%total%">
+      <td>%Description%</td>
+      <td>%total_c%</td><td class="total_p">%total_p%%</td>
+      <td>%TargetContact_c%  </td><td class="total_p">%TargetContact_p%%</td>
+      <td>%OfficeVisit_c%    </td><td class="total_p">%OfficeVisit_p%%</td>
+      <td>%ObjectShow_c%     </td><td class="total_p">%ObjectShow_p%%</td>
+      <td>%HasAgreement_c%   </td><td class="total_p">%HasAgreement_p%%</td>
+      <td>%DepositReceived_c%</td><td class="total_p">%DepositReceived_p%%</td>
+      <td>%Handshake_c%      </td><td class="total_p">%Handshake_p%%</td>
+     </tr>
+    </loop_customersources>
+   </table>
+  </td>
+ </tr>
+ 
+</table>

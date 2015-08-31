@@ -1,0 +1,406 @@
+<block_notasks>
+ <en>No tasks</en><ru>Подходящие задачи отсутствуют</ru>
+</block_notasks>
+
+<block_comment>
+ <table class=comment>
+  <col>
+  <col>
+  <col width=20px>
+  <tr class=vm>
+   <td class=l><b>%Username%</b></td>
+   <td class=r>%DateAdded%</td>
+   <td><comctl %ID%_%ParentID%  deleteComment cross-script.png></comctl></td> 
+  </tr>
+  <tr>
+   <td colspan=3>%Comment%</td>
+  </tr>
+ </table>
+</block_comment>
+
+<table class=fullwidth id="tasks">
+ <col width=25%>
+ <col width=25%>
+ <col width=25%>
+ <col width=25%>
+ 
+ <tr class=tasks_first>
+  <th id="tasks0_th">
+   <ru>Добавленные</ru><en>Added</en> (<span id="tasks0_cnt">0</span>)
+  </th>
+  <th id=tasks1_th>
+   <ru>Выполняются</ru><en>In progress</en> (<span id="tasks1_cnt">0</span>)
+  </th>
+  <th id=tasks2_th>
+   <ru>Завершённые</ru><en>Completed</en> (<span id="tasks2_cnt">0</span>)
+  </th>
+  <th id=tasks3_th>
+   <ru>Подтверждённые</ru><en>Approved</en> (<span id="tasks3_cnt">0</span>)
+  </th>
+ </tr>
+ <tr>
+  <td id="tasks0">
+   <loop_task0>
+    <div class=taskborder>
+     <table class='task' id='task_%ID%'>
+      <tr>
+       <td colspan=4>
+        <a href='?go=tasks&id=%ID%'><b>%ShortLink%:</b> <span id='ti_%ID%'>%Title%</span></a>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=4>
+        <span id="et_%ID%">
+         <comctl_po %ID%  expandTask ui-panel-resize.png><ru>Раскрыть</ru><en>Expand</en></comctl_po>
+        </span>
+        <span id='mt_%ID%' class=hidden>
+         <comctl_po %ID%  minimizeTask ui-panel-resize.png><ru>Свернуть</ru><en>Minimize</en></comctl_po>
+        </span>
+        <comctl %ID%  toList1 arrow.png><ru>Запуск</ru><en>Start</en></comctl>
+        <comctl_po %ID%  toList4 cross-script.png><ru>Удалить</ru><en>Delete</en></comctl_po>
+ <!--       <comctl %ID%  deleteTask cross-script.png><ru>Удалить навсегда</ru><en>Delete forever</en></comctl> -->
+        <comctl_po %ID%  editTask pencil.png><ru>Редактировать</ru><en>Edit</en></comctl_po>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=4 class=hidden id='da_%ID%'>
+        <b><en>Date added</en><ru>Дата добавления</ru>:</b>
+        %DateAdded%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Дедлайн</ru><en>Due date</en>:</b>
+        <span id='dat_%ID%'>%DateDue%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Важность</ru><en>Priority</en>:</b>
+        <span id='pri_%ID%'>%Priority%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Трудозатраты</ru><en>Labor</en>:</b>
+        <span id='lab_%ID%'>%Labor%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td>
+        <b><ru>Исполнитель</ru><en>Assigned to</en>:</b>
+        <span id='ast_%ID%'>%AssignedToName%</span>
+       </td>
+       <td>
+        <div class=hidden_ id='ab_%ID%'>
+         <b><ru>Автор</ru><en>Who added this task</en>:</b> %AddedByName%
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td class=hidden id='pt_%ID%' colspan=4>
+        <b><ru>Проект</ru><en>Project</en>:</b> <span id='prt_%ID%'>%ProjectTitle%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <div class=hidden id='tt_%ID%' colspan=4>
+         <b><ru>Группа задач</ru><en>Task list</en>:</b> <span id='tlt_%ID%'>%TasklistTitle%</span>
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=4>
+        <span id='des_%ID%'>%Description%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull id='c_%ID%'>
+       <td id='co_%ID%' colspan=2>
+        %Comments%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2 class=comment_td id='nc_%ID%'>
+        <ctxts CommentToTask_%ID%></ctxts><br>
+        <comctl %ID%  sendComment mail-send.png><ru>Отправить</ru><en>Send</en></comctl>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </loop_task0>
+   
+  </td>
+  <td id='tasks1'>
+   <loop_task1>
+    <div class=taskborder>
+     <table class='task' id='task_%ID%'>
+      <tr>
+       <td colspan=2>
+        <a href='?go=tasks&id=%ID%'><b>%ShortLink%:</b> <span id='ti_%ID%'>%Title%</span></a>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <span id='et_%ID%'>
+         <comctl_po %ID%  expandTask ui-panel-resize.png><ru>Раскрыть</ru><en>Expand</en></comctl_po>
+        </span>
+        <span id='mt_%ID%' class=hidden>
+         <comctl_po %ID%  minimizeTask ui-panel-resize.png><ru>Свернуть</ru><en>Minimize</en></comctl_po>
+        </span>
+        <comctl_po %ID%  toList0 arrow-180.png><ru>В добавленные</ru><en>To added</en></comctl_po>
+        <comctl %ID%  toList2 arrow.png><ru>Готово</ru><en>Completed</en></comctl>
+        <comctl_po %ID%  editTask pencil.png><ru>Редактировать</ru><en>Edit</en></comctl_po>
+        <block_paused>
+         <comctl_po %ID%  resumeTask control.png><ru>Возобновить</ru><en>Resume</en></comctl_po>
+        </block_paused>
+        <block_playing>
+         <comctl_po %ID%  pauseTask control-pause.png><ru>Поставить на паузу</ru><en>Pause</en></comctl_po>
+        </block_playing>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2 class=hidden id='da_%ID%'>
+        <b><en>Date added</en><ru>Дата добавления</ru>:</b> %DateAdded%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Дедлайн</ru><en>Due date</en>:</b>
+        <span id='dat_%ID%'>%DateDue%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Важность</ru><en>Priority</en>:</b>
+        <span id='pri_%ID%'>%Priority%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Трудозатраты</ru><en>Labor</en>:</b>
+        <span id='lab_%ID%'>%Labor%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td>
+        <b><ru>Исполнитель</ru><en>Assigned to</en>:</b>
+        <span id='ast_%ID%'>%AssignedToName%</span>
+       </td>
+       <td>
+        <div class=hidden_ id='ab_%ID%'>
+         <b><ru>Автор</ru><en>Who added this task</en>:</b> %AddedByName%
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td class=hidden id='pt_%ID%' colspan=4>
+        <b><ru>Проект</ru><en>Project</en>:</b> <span id='prt_%ID%'>%ProjectTitle%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <div class=hidden id='tt_%ID%' colspan=4>
+         <b><ru>Группа задач</ru><en>Task list</en>:</b> <span id='tlt_%ID%'>%TasklistTitle%</span>
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <span id='des_%ID%'>%Description%</span>
+       </td>
+      </tr>
+      <tr  class=onlyfull id='c_%ID%'>
+       <td id='co_%ID%' colspan=2>
+        %Comments%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2 class=comment_td id='nc_%ID%'>
+        <ctxts CommentToTask_%ID%></ctxts><br>
+        <comctl %ID%  sendComment mail-send.png><ru>Отправить</ru><en>Send</en></comctl>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </loop_task1>
+   
+  </td>
+  <td id='tasks2'>
+   <loop_task2>
+    <div class=taskborder>
+     <table class='task' id='task_%ID%'>
+      <tr>
+       <td colspan=2>
+        <a href='?go=tasks&id=%ID%'><b>%ShortLink%:</b> <span id='ti_%ID%'>%Title%</span></a>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <span id='et_%ID%'>
+         <comctl_po %ID%  expandTask ui-panel-resize.png><ru>Раскрыть</ru><en>Expand</en></comctl_po>
+        </span>
+        <span id='mt_%ID%' class=hidden>
+         <comctl_po %ID%  minimizeTask ui-panel-resize.png><ru>Свернуть</ru><en>Minimize</en></comctl_po>
+        </span>
+        <comctl_po %ID%  toList1 arrow-180.png><ru>В процесс</ru><en>To in progress</en></comctl_po>
+        <comctl %ID%  toList3 arrow.png><ru>Подтвердить</ru><en>Approve</en></comctl>
+        <comctl_po %ID%  editTask pencil.png><ru>Редактировать</ru><en>Edit</en></comctl_po>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2 class=hidden id='da_%ID%'>
+        <b><en>Date added</en><ru>Дата добавления</ru>:</b> %DateAdded%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Дедлайн</ru><en>Due date</en>:</b>
+        <span id='dat_%ID%'>%DateDue%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Важность</ru><en>Priority</en>:</b>
+        <span id='pri_%ID%'>%Priority%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Трудозатраты</ru><en>Labor</en>:</b>
+        <span id='lab_%ID%'>%Labor%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td>
+        <b><ru>Исполнитель</ru><en>Assigned to</en>:</b>
+        <span id='ast_%ID%'>%AssignedToName%</span>
+       </td>
+       <td>
+        <div class=hidden_ id='ab_%ID%'>
+         <b><ru>Автор</ru><en>Who added this task</en>:</b> %AddedByName%
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td class=hidden id='pt_%ID%' colspan=4>
+        <b><ru>Проект</ru><en>Project</en>:</b> <span id='prt_%ID%'>%ProjectTitle%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <div class=hidden id='tt_%ID%' colspan=4>
+         <b><ru>Группа задач</ru><en>Task list</en>:</b> <span id='tlt_%ID%'>%TasklistTitle%</span>
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <span id='des_%ID%'>%Description%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull id='c_%ID%'>
+       <td id='co_%ID%' colspan=2>
+        %Comments%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2 class=comment_td id='nc_%ID%'>
+        <ctxts CommentToTask_%ID%></ctxts><br>
+        <comctl %ID%  sendComment mail-send.png><ru>Отправить</ru><en>Send</en></comctl>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </loop_task2>
+   
+  </td>
+  <td id='tasks3'>
+   <loop_task3>
+    <div class=taskborder>
+     <table class='task' id='task_%ID%'>
+      <tr>
+       <td colspan=2>
+        <a href='?go=tasks&id=%ID%'><b>%ShortLink%:</b> <span id='ti_%ID%'>%Title%</span></a>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <span id='et_%ID%'>
+         <comctl_po %ID%  expandTask ui-panel-resize.png><ru>Раскрыть</ru><en>Expand</en></comctl_po>
+        </span>
+        <span id='mt_%ID%' class=hidden>
+         <comctl_po %ID%  minimizeTask ui-panel-resize.png><ru>Свернуть</ru><en>Minimize</en></comctl_po>
+        </span>
+        <comctl_po %ID%  toList2 arrow-180.png><ru>В выполненные</ru><en>To completed</en></comctl_po>
+        <comctl_po %ID%  editTask pencil.png><ru>Редактировать</ru><en>Edit</en></comctl_po>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2 class=hidden id='da_%ID%'>
+        <b><en>Date added</en><ru>Дата добавления</ru>:</b> %DateAdded%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Дедлайн</ru><en>Due date</en>:</b>
+        <span id='dat_%ID%'>%DateDue%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Важность</ru><en>Priority</en>:</b>
+        <span id='pri_%ID%'>%Priority%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <b><ru>Трудозатраты</ru><en>Labor</en>:</b>
+        <span id='lab_%ID%'>%Labor%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td>
+        <b><ru>Исполнитель</ru><en>Assigned to</en>:</b>
+        <span id='ast_%ID%'>%AssignedToName%</span>
+       </td>
+       <td>
+        <div class=hidden_ id='ab_%ID%'>
+         <b><ru>Автор</ru><en>Who added this task</en>:</b> %AddedByName%
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td class=hidden id='pt_%ID%' colspan=4>
+        <b><ru>Проект</ru><en>Project</en>:</b> <span id='prt_%ID%'>%ProjectTitle%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <div class=hidden id='tt_%ID%' colspan=4>
+         <b><ru>Группа задач</ru><en>Task list</en>:</b> <span id='tlt_%ID%'>%TasklistTitle%</span>
+        </div>
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2>
+        <span id='des_%ID%'>%Description%</span>
+       </td>
+      </tr>
+      <tr class=onlyfull id='c_%ID%'>
+       <td id='co_%ID%' colspan=2>
+        %Comments%
+       </td>
+      </tr>
+      <tr class=onlyfull>
+       <td colspan=2 class=comment_td id='nc_%ID%'>
+        <ctxts CommentToTask_%ID%></ctxts><br>
+        <comctl %ID%  sendComment mail-send.png><ru>Отправить</ru><en>Send</en></comctl>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </loop_task3>
+   
+  </td>
+ </tr>
+</table>

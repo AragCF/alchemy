@@ -1,0 +1,12 @@
+<table class='comctl %param1%' id='%id%' onclick='btn_click(this.id,"%groupid%","%param1%");' title='%caption%'>
+ <col width=20>
+ <col>
+ <tr>
+  <td class=td_0>
+   <img src='%imgfolder%/%subtype%'>
+  </td>
+  <td class=td_1 id='c%id%'>
+   %caption%
+  </td>
+ </tr>
+</table>

@@ -1,0 +1,95 @@
+<table>
+ <tr>
+  <td class=r>
+   <ru>Тип записи:</ru>
+   <en>Record type:</en>
+  </td>
+  <td>
+   <select class=editoritem id=typeid>
+    <option id="0"><ru>Все типы</ru><en>All types</en></option>
+    <loop_typeids>
+     <option id="%id%" %selected%>%list_typeids%</option>
+    </loop_typeids>
+   </select>
+  </td>
+  
+  <td class=r>
+   <en>Date added</en><ru>Дата добавления</ru>:
+  </td>
+  <td>
+   <input type=text id=dateadded>
+  </td>
+  
+  <td class=r>
+   <en>Value</en><ru>Значение</ru>:
+  </td>
+  <td>
+   <input type=text id=value>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Project</en><ru>Проект</ru>:
+  </td>
+  <td>
+   <select class=editoritem id=projectid>
+    <loop_projects>
+     <option id="%id%" %selected%>%list_projects%</option>
+    </loop_projects>
+   </select>
+  </td>
+  
+  <td class=r>
+   <ru>Группа:</ru>
+   <en>Group:</en>
+  </td>
+  <td>
+   <select class=editoritem id=groupid>
+    <option id="0"><ru>Все группы</ru><en>All groups</en></option>
+    <loop_groupids>
+     <option id="%id%" %selected%>%list_groupids%</option>
+    </loop_groupids>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <ru>Организация:</ru>
+   <en>Place name:</en>
+  </td>
+  <td>
+   <input type=text id=placename>
+   <br>
+   <select class=editoritem id=placename_select onclick="setvalue('placename',this.options[this.selectedIndex];">
+    <option id="0"><ru>Все типы</ru><en>All types</en></option>
+    <loop_placenames>
+     <option id="%id%" %selected%>%list_placenames%</option>
+    </loop_placenames>
+   </select>
+  </td>
+  
+  <td class=r>
+   <ru>Тип организации:</ru>
+   <en>Place type:</en>
+  </td>
+  <td>
+   <select class=editoritem id=placetype>
+    <option id="0"><ru>Все типы</ru><en>All types</en></option>
+    <loop_placetypes>
+     <option id="%id%" %selected%>%list_placetypes%</option>
+    </loop_placetypes>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Content</en><ru>Комментарий</ru>:
+  </td>
+  <td colspan=7>
+   <textarea id=txtcontent></textarea>
+  </td>
+ </tr>
+ 
+ 
+
+</table>

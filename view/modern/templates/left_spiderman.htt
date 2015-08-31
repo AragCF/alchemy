@@ -1,0 +1,80 @@
+<table class=editor id=AddTask>
+ <tr>
+  <td class=r>
+   <b>ID:</b>
+  </td>
+  <td class=l>
+   <cinputs ID></cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b>ParentID:</b>
+  </td>
+  <td class=l>
+   <cinputs ParentID></cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Name</en><ru>Имя</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Name></cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Phone</en><ru>Телефон</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Phone></cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b>E-mail:</b>
+  </td>
+  <td class=l>
+   <cinputs Email></cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Next call</en><ru>Следующий звонок</ru>:</b>
+  </td>
+  <td class=l>
+   <calendar NextCall>%today%</calendar>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Place</en><ru>Место</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Place></cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Comment</en><ru>Комментарий</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts Comment></ctxts>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l>
+   <comctl -1  addSpider task--plus.png><ru>Добавить запись</ru><en>Add record</en></comctl>
+   <comctl -1  newSpider eraser.png><ru>Сброс</ru><en>Clear</en></comctl>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l id=addSpiderRslt>
+  </td>
+ </tr>
+</table>

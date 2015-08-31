@@ -1,0 +1,6 @@
+<table id='%groupid%_%id%' onclick='fb_click(this.id,"%groupid%");' class='frbt'>
+ <tr>
+  <td><div class='%ctltype%' id='p%groupid%_%id%'></div></td>
+  <td id='c%groupid%_%id%'>%caption%</td>
+ </tr>
+</table>

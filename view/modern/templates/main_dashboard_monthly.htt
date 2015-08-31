@@ -1,0 +1,32 @@
+<h2>%caption%</h2>
+
+<table class="tbl_dashboard">
+ <tr>
+  <th>Год</th>
+  <th>Месяц</th>
+  <th>Приход</th>
+  <th>Расход</th>
+  <th>Прибыль</th>
+  
+  <th>ROI</th>
+ </tr>
+ <loop_row>
+  <tr class="bt">
+   <td>%Year%</td>
+   <td>%Month%</td>
+   <td>%Income%</td>
+   <td>%Outcome%</td>
+   <td>%Profit%</td>
+   
+   <td>%ROI%</td>
+  </tr>
+ </loop_row>
+ 
+ <tr class="bt">
+  <td colspan=2>Среднее</td>
+  <td>%Income_avg%</td>
+  <td>%Outcome_avg%</td>
+  <td>%Profit_avg%</td>
+  <td>%ROI_avg%</td>
+ </tr>
+</table>

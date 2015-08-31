@@ -1,0 +1,47 @@
+<ru>Количество записей</ru><en>Number of entries</en>: %numrows%
+
+<block_no>
+ <en>No</en><ru>Нет</ru>
+</block_no>
+
+<block_norows>
+ <table class="tableview">
+  <tr class="row row1" id="tableheader">
+   <th><en>No data</en><ru>Нет данных</ru></th>
+  </tr>
+ </table>
+</block_norows>
+
+<loop_table>
+ <table class=tableview>
+  <tr class=row1 id=tableheader>
+   <th>ID</th>
+   <th><en>DateAdded</en><ru>Дата добавления</ru></th>
+   <th><en>LastAccess</en><ru>Дата последнего обращения</ru></th>
+   <th><en>LastAccess</en><ru>Дата рождения</ru></th>
+   <th><en>Username</en><ru>Логин</ru></th>
+   <th><en>Email</en><ru>Email</ru></th>
+   <th><en>Name, surname</en><ru>Имя, фамилия</ru></th>
+   <th colspan=3></th>
+  </tr>
+  <loop_table_row>
+   <tr class="row row%c%">
+    <td id='ID_%ID%'>%ID%</td>
+    <td>%DateAdded%</td>
+    <td>%LastAccess%</td>
+    <td><img src="%imgfolder%/zodiac-%zodiac_Name%.png" title="%zodiac_Description%">%DateBirth%</td>
+    <td>%Username%</td>
+    <td>%Email% %Email2%</td>
+    <td>%Firstname% %Surname%</td>
+    <td>
+     <comctl %ID%  editUser pencil.png><ru>Правка</ru><en>Edit</en></comctl>
+    </td>
+    <block_delete>
+     <td>
+      <comctl %ID%  deleteUser cross-script.png><ru>Удалить</ru><en>Delete</en></comctl>
+     </td>
+    </block_delete>
+   </tr>
+  </loop_table_row>
+ </table>
+</loop_table>

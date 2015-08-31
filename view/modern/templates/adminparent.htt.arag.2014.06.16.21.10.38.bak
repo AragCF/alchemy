@@ -1,0 +1,709 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <title>cfcrm - admin panel login</title>
+  <link rel="stylesheet" type="text/css" href="file.php?name=%viewroot%/styles/admin.css"/>
+  <script type="text/javascript" src="controller/js/ajax2.js"></script>
+  <script type="text/javascript" src="controller/js/common.js"></script>
+  <script type="text/javascript" src="controller/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="controller/js/json.js"></script>
+  <meta http-equiv="Content-Language" content="ru"/>
+  <link rel="SHORTCUT ICON" href="%imgfolder%/favicon.ico"/>
+ </head>
+ <body id='body' onload="load();">
+  <style type="text/css">
+   %style%
+  </style>
+  <div class=hidden id="fillErrorsMsg"><ru>Пожалуйста, проверьте следующие поля:</ru><en>Please check the following fields:</en></div>
+  <div class=hidden id="photo_delete_question"><ru>Вы действительно хотите удалить эту фотографию?</ru><en>Are you sure want to delete this photo?</en></div>
+  <div id="popupdefault"       class=hidden>
+   <table class=editorcontainer>
+    <col width=20%><col width=60%><col width=20%>
+    <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr>
+     <td></td>
+     <td>
+      <div class=c>
+       <div class=popupheader>
+        <div class=floatl><en>Message Window</en><ru>Окно сообщений</ru>
+         <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+        </div>
+        <div class=floatr><a href="javascript:hidepopup();"><img src='%imgfolder%/cross.png'></a></div>
+        <div class=clrln01></div>&nbsp;
+       </div>
+       <div class=ch id=content>
+        <table id=popupdefault>
+         <tr>
+          <td><img src='%imgfolder%/progress.gif'></td>
+          <td><ru>Загрузка...</ru><en>Loading...</en></td>
+         </tr>
+        </table>
+       </div><br>
+       <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"    value="<en>Take care</en><ru>Обработать</ru>">
+       <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"       value="<en>Save</en><ru>Сохранить</ru>">
+       <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"  value="<en>Sold</en><ru>Продано</ru>">
+       <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"     value="<en>Denied</en><ru>Отказ</ru>">
+       <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"     value="<en>Delete</en><ru>Удалить</ru>">
+       <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"      value="<en>Close</en><ru>Закрыть</ru>">
+      </div>
+     </td>
+     <td></td>
+    </tr>
+    <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+    </tr>
+   </table>
+  </div>
+  <div id="popupeditorbkg"     class="hidden"></div>
+  <div id="popupeditor"        class="hidden"></div>
+  <div id="popupjs"            class="hidden"></div>
+  <table class=maintbl>
+   <tr class=menu>
+    <td>
+     <div class=floatl>
+      <table class=topmenutbl id="topmenu">
+       <tr class=adminmenu>
+        <td>
+         <a class="mainlevel-trans" href="?admin=1">
+          <span id="%1%" alt="Организации и агенты">Организации и агенты</span>
+         </a>
+        </td>
+        <td>
+         <a class="mainlevel-trans" href="?admin=2">
+          <span id="%2%" alt="Тарифные планы">Тарифные планы</span>
+         </a>
+        </td>
+        <td>
+         <a class="mainlevel-trans" href="?admin=3">
+          <span id="%3%" alt="Меню">Меню</span>
+         </a>
+        </td>
+        <!--
+        <td>
+         <a class="mainlevel-trans" href="?admin=4">
+          <span id="%4%" alt="Импорт базы данных IS-Centre">Импорт базы данных IS-Centre</span>
+         </a>
+        </td>
+        -->
+       </tr>
+      </table>
+     </div>
+     <div class=floatr>
+      <ru>
+       <a href="?lang=en" title="Switch to english"><img src="%imgfolder%/flag_england.gif" alt="Switch to english"></a>
+      </ru>
+      <en>
+       <a href="?lang=ru" title="Переключиться на русский язык"><img src="%imgfolder%/flag_russia.gif" alt="Переключиться на русский язык"></a>
+      </en>
+     </div>
+     <div class=floatr>
+      |
+      mm2013 -
+      <ru>Админ-панель</ru><en>Admin-panel</en>
+     </div>
+     <div class=floatr>
+      <ru>Пользователь:</ru>
+      <en>User:</en>
+      %agentname%
+      |
+      <a href="javascript:dologout();">
+       <ru>Выход</ru>
+       <en>Logout</en>
+      </a>
+     </div>
+     <div class=floatr>
+      <a href='?'><ru>Режим пользователя</ru><en>User mode</en></a>
+      |
+     </div>
+     <div class=floatr>
+      <input type=checkbox class=debug id=debug><label for=debug> Ajax debug</label> |
+     </div>
+    </td>
+   </tr>
+   <tr>
+    <td id=parentpanel_0>
+     <div class=scrolled_2 id=mainpanel_0_0>
+      <adminpages_parent>
+       <adminpage1>
+        <table class=adminpanel id=content>
+         <tr class=vtop>
+          <td class=vtop>
+           <div class=groupheader><table><tr><td><img src='%imgfolder%/building.png'></td><td><ru>Организации</ru><en>Companies</en></td></tr></table></div>
+           <div class=groupcontainer>
+            <table>
+             <tr>
+              <td class=inner>
+               <table class=objectdetails>
+                <tr class=objectdetails>
+                 <td>
+                  <select multiple="multiple" class=listview id=companies onclick='companiesClick();'>
+                   <loop_companies>
+                    <option id="%id%" %selected%>%list_companies%</option>
+                   </loop_companies>
+                  </select>
+                 </td>
+                </tr>
+                <tr class=objectdetails>
+                 <td>
+                  <div class=leftfiltersgroup><input type=button class=button onclick="adminButtonClick(this.id);" id="addcompany" value="<en>Add company</en><ru>Добавить фирму</ru>"></div>
+                 </td>
+                </tr>
+               </table>
+              </td>
+              <td class=objectdetailscontainer id=companydetails>
+               <companydetails>
+                <table class=objectdetails>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p id='comment_companies_Name'>%comment_companies_Name%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_Name%" id="companies_Name" class="required"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_Phone%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=16 value="%companies_Phone%" id="companies_Phone"></p>
+                  </td>
+                  <td class=fieldname>
+                   <p>%comment_companies_AuxPhone%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=16 value="%companies_AuxPhone%" id="companies_AuxPhone"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_PostAddress%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_PostAddress%" id="companies_PostAddress"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_CorpAddress%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_CorpAddress%" id="companies_CorpAddress"></p>
+                  </td>
+                 </tr>
+                 <tr>
+                  <td class=fieldname>
+                   <p id="comment_companies_TariffID">%comment_companies_TariffID%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p>
+                    <select id="companies_TariffID">
+                     <loop_tariffs>
+                      <option id="%id%" %selected%>%list_tariffs%</option>
+                     </loop_tariffs>
+                    </select>
+                   </p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_INN%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_INN%" id="companies_INN"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_KPP%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_KPP%" id="companies_KPP"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_CurrentAccount%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_CurrentAccount%" id="companies_CurrentAccount"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_Bank%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_Bank%" id="companies_Bank"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_PersonalAccount%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_PersonalAccount%" id="companies_PersonalAccount"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_BIK%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_BIK%" id="companies_BIK"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_OKPO%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_OKPO%" id="companies_OKPO"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_OKONKH%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_OKONKH%" id="companies_OKONKH"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_OKATO%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_OKATO%" id="companies_OKATO"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_CorrespondentAccount%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_CorrespondentAccount%" id="companies_CorrespondentAccount"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_Chief%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_Chief%" id="companies_Chief"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_companies_ChiefPhone%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%companies_ChiefPhone%" id="companies_ChiefPhone"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p><ru>Прочие опции</ru><en>Other options</en>:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p>
+                    <input type=checkbox id='companies_Enabled' %companies_Enabled_checked%>
+                    <label for='companies_Enabled'>%comment_companies_Enabled%</label>
+                   </p>
+                  </td>
+                  <td class=fieldvalue colspan=2>
+                   <p>
+                    ID:
+                    <input type=text size=5 value="%companies_ID%" id="companies_ID">
+                    IsTemplate:
+                    <input type=text size=5 value="%companies_IsTemplate%" id="companies_IsTemplate">
+                   </p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td>
+                  </td>
+                  <td class=fieldvalue colspan=2>
+                   <div class=leftfiltersgroup>
+                    <input type=button class=button onclick="adminButtonClick(this.id);" id="savecompany"   value="<en>Save</en><ru>Сохранить</ru>">
+                    <input type=button class=button onclick="adminButtonClick(this.id);" id="deletecompany" value="<en>Delete</en><ru>Удалить</ru>">
+                   </div>
+                  </td>
+                 </tr>
+                </table>
+               </companydetails>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </td>
+          <td class=vtop id=companies>
+           <div class=hidden id="fillErrorsContainer">
+            <div class=groupheader><table><tr><td><img src='%imgfolder%/application-terminal.png'></td><td><ru>Системные сообщения</ru><en>System messages</en></td></tr></table></div>
+            <div class=groupcontainer>
+             <table class=objectdetails>
+              <tr class=objectdetails>
+               <td class=fieldvalue id="fillErrorsText">
+               </td>
+              </tr>
+             </table>
+            </div>
+           </div>
+           <span id=debugwnd>
+           </span>
+          </td>
+         </tr>
+         <tr>
+          <td class=vtop>
+           <div class=groupheader><table><tr><td><img src='%imgfolder%/user.png'></td><td><ru>Агенты</ru><en>Agents</en></td></tr></table></div>
+           <div class=groupcontainer>
+            <selectcompanymsg>
+             <ru>Выберите компанию</ru><en>Select company</en>
+            </selectcompanymsg>
+            <table>
+             <tr>
+              <td class=inner>
+               <table class=objectdetails>
+                <tr class=objectdetails>
+                 <td>
+                  <select multiple="multiple" class=listview id=agents onclick='agentsClick();'>
+                   <loop_agentinfo>
+                    <option id="%id%" %selected%>%list_agentinfo%</option>
+                   </loop_agentinfo>
+                  </select>
+                 </td>
+                </tr>
+                <tr class=objectdetails>
+                 <td>
+                  <div class=leftfiltersgroup><input type=button class=button onclick="adminButtonClick(this.id);" id="addagent" value="<en>Add agent</en><ru>Добавить агента</ru>"></div>
+                 </td>
+                </tr>
+               </table>
+              </td>
+              <td class=objectdetailscontainer id=agentdetails>
+               <agentdetails>
+                <table class=objectdetails>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p id='comment_agentinfo_FirstName'>%comment_agentinfo_FirstName%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=20 value="%agentinfo_FirstName%" id="agentinfo_FirstName" class="required"></p>
+                  </td>
+                  <td class=fieldname>
+                   <p>%comment_agentinfo_LastName%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=20 value="%agentinfo_LastName%" id="agentinfo_LastName"></p>
+                  </td>
+                 </tr>
+                 <tr>
+                  <td class=fieldname>
+                   <p>%comment_agentinfo_Initials%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=20 value="%agentinfo_Initials%" id="agentinfo_Initials"></p>
+                  </td>
+                  <td class=fieldname>
+                   <p id='comment_agentinfo_Email'>%comment_agentinfo_Email%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=20 value="%agentinfo_Email%" id="agentinfo_Email"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_agentinfo_Phone%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=20 value="%agentinfo_Phone%" id="agentinfo_Phone"></p>
+                  </td>
+                  <td class=fieldname>
+                   <p>%comment_agentinfo_AuxPhone%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=20 value="%agentinfo_AuxPhone%" id="agentinfo_AuxPhone"></p>
+                  </td>
+                 </tr>
+                 <tr>
+                  <td class=fieldname>
+                   <p id="comment_agentinfo_CompanyID">%comment_agentinfo_CompanyID%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p>
+                    <select id="agentinfo_CompanyID">
+                     <loop_agentcompanies>
+                      <option id="%id%" %selected%>%list_agentcompanies%</option>
+                     </loop_agentcompanies>
+                    </select>
+                   </p>
+                  </td>
+                  <td class=fieldname>
+                   <p id="comment_agentinfo_MasterID">%comment_agentinfo_MasterID%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p>
+                    <select id="agentinfo_MasterID">
+                     <loop_masters>
+                      <option id="%id%" %selected%>%list_masters%</option>
+                     </loop_masters>
+                    </select>
+                   </p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname colspan=2>
+                   <p id='comment_agentinfo_MaxUsers'>%comment_agentinfo_MaxUsers%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=15 value="%agentinfo_MaxUsers%" id="agentinfo_MaxUsers"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p id='comment_agentinfo_Username'>%comment_agentinfo_Username%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=15 value="%agentinfo_Username%" id="agentinfo_Username" class="required"></p>
+                  </td>
+                  <td class=fieldname>
+                   <p id="comment_agentinfo_AccountType">%comment_agentinfo_AccountType%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p>
+                    <select id="agentinfo_AccountType">
+                     <loop_accounttypes>
+                      <option id="%id%" %selected%>%list_accounttypes%</option>
+                     </loop_accounttypes>
+                    </select>
+                   </p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_agentinfo_Password%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=4>
+                   <p>
+                    <input type=text size=15 value="%agentinfo_Password%" id="agentinfo_Password">
+                    <ru>Введите новый пароль, чтобы изменить его</ru><en>Enter new password to change it</en>
+                   </p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p><ru>Прочие опции</ru><en>Other options</en>:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p>
+                    <input type=checkbox id='agentinfo_Enabled' %agentinfo_Enabled_checked%>
+                    <label for='agentinfo_Enabled'>%comment_agentinfo_Enabled%</label>
+                   </p>
+                  </td>
+                  <td class=fieldvalue colspan=2>
+                   <p>
+                    ID:
+                    <input type=text size=5 value="%agentinfo_ID%" id="agentinfo_ID">
+                    IsTemplate:
+                    <input type=text size=5 value="%agentinfo_IsTemplate%" id="agentinfo_IsTemplate">
+                   </p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td>
+                  </td>
+                  <td class=fieldvalue colspan=5>
+                   <div class=leftfiltersgroup>
+                    <input type=button class=button onclick="adminButtonClick(this.id);" id="saveagent"   value="<en>Save</en><ru>Сохранить</ru>">
+                    <input type=button class=button onclick="adminButtonClick(this.id);" id="deleteagent" value="<en>Delete</en><ru>Удалить</ru>">
+                   </div>
+                  </td>
+                 </tr>
+                </table>
+               </agentdetails>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </td>
+          <td class=vtop id=agents>
+           <div class=hidden id="fillErrorsContainer">
+            <div class=groupheader><table><tr><td><img src='%imgfolder%/application-terminal.png'></td><td><ru>Системные сообщения</ru><en>System messages</en></td></tr></table></div>
+            <div class=groupcontainer>
+             <table class=objectdetails>
+              <tr class=objectdetails>
+               <td class=fieldvalue id="fillErrorsText">
+               </td>
+              </tr>
+             </table>
+            </div>
+           </div>
+           <span id=debugwnd>
+           </span>
+          </td>
+         </tr>
+        </table>
+       </adminpage1>
+       <adminpage2>
+        <table class=adminpanel id=content>
+         <tr class=vtop>
+          <td class=vtop>
+           <div class=groupheader><table><tr><td><img src='%imgfolder%/table-money.png'></td><td><ru>Тарифные планы</ru><en>Tariffs</en></td></tr></table></div>
+           <div class=groupcontainer>
+            <table>
+             <tr>
+              <td class=inner>
+               <table class=objectdetails>
+                <tr class=objectdetails>
+                 <td>
+                  <select multiple="multiple" class=listview id=tariffs onclick='tariffsClick();'>
+                   <loop_tariffs>
+                    <option id="%id%" %selected%>%list_tariffs%</option>
+                   </loop_tariffs>
+                  </select>
+                 </td>
+                </tr>
+                <tr class=objectdetails>
+                 <td>
+                  <div class=leftfiltersgroup><input type=button class=button onclick="adminButtonClick(this.id);" id="addtariff" value="<en>Add tariff</en><ru>Добавить тариф</ru>"></div>
+                 </td>
+                </tr>
+               </table>
+              </td>
+              <td class=objectdetailscontainer id=tariffdetails>
+               <tariffdetails>
+                <table class=objectdetails>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p id='comment_tariffs_Name'>%comment_tariffs_Name%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%tariffs_Name%" id="tariffs_Name" class="required"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_tariffs_Description%:</p>
+                  </td>
+                  <td class=fieldvalue colspan=3>
+                   <p><input type=text size=50 value="%tariffs_Description%" id="tariffs_Description"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p>%comment_tariffs_CostPerMonth%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=16 value="%tariffs_CostPerMonth%" id="tariffs_CostPerMonth"></p>
+                  </td>
+                  <td class=fieldname>
+                   <p>%comment_tariffs_MaxUsers%:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p><input type=text size=16 value="%tariffs_MaxUsers%" id="tariffs_MaxUsers"></p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td class=fieldname>
+                   <p><ru>Прочие опции</ru><en>Other options</en>:</p>
+                  </td>
+                  <td class=fieldvalue>
+                   <p>
+                    <input type=checkbox id='tariffs_Enabled' %tariffs_Enabled_checked%>
+                    <label for='tariffs_Enabled'>%comment_tariffs_Enabled%</label>
+                   </p>
+                  </td>
+                  <td class=fieldvalue colspan=2>
+                   <p>
+                    ID:
+                    <input type=text size=5 value="%tariffs_ID%" id="tariffs_ID">
+                    IsTemplate:
+                    <input type=text size=5 value="%tariffs_IsTemplate%" id="tariffs_IsTemplate">
+                   </p>
+                  </td>
+                 </tr>
+                 <tr class=objectdetails>
+                  <td>
+                  </td>
+                  <td class=fieldvalue colspan=2>
+                   <div class=leftfiltersgroup>
+                    <input type=button class=button onclick="adminButtonClick(this.id);" id="savetariff"   value="<en>Save</en><ru>Сохранить</ru>">
+                    <input type=button class=button onclick="adminButtonClick(this.id);" id="deletetariff" value="<en>Delete</en><ru>Удалить</ru>">
+                   </div>
+                  </td>
+                 </tr>
+                </table>
+               </tariffdetails>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </td>
+          <td class=vtop id=tariffs>
+           <div class=hidden id="fillErrorsContainer">
+            <div class=groupheader><table><tr><td><img src='%imgfolder%/application-terminal.png'></td><td><ru>Системные сообщения</ru><en>System messages</en></td></tr></table></div>
+            <div class=groupcontainer>
+             <table class=objectdetails>
+              <tr class=objectdetails>
+               <td class=fieldvalue id="fillErrorsText">
+               </td>
+              </tr>
+             </table>
+            </div>
+           </div>
+           <span id=debugwnd>
+           </span>
+          </td>
+         </tr>
+        </table>
+       </adminpage2>
+       <adminpage3>
+        <div id=adminmenu>
+         <loop_table>
+          <table class=tableview>
+           <tr class=row1 id=tableheader>
+            <th>ID</th>
+            <th>ID родителя</th>
+            <th>Название</th>
+            <th>Ссылка</th>
+            <th>Порядок</th>
+            <th>Отображать</th>
+            <th>Опции</th>
+           </tr>
+           <loop_table_row>
+            <tr class=row%c%>
+             <td>%cell_ID%</td>
+             <td>%cell_ParentID%</td>
+             <td>%cell_Name%</td>
+             <td>%cell_Link%</td>
+             <td>%cell_Order%</td>
+             <td><a href="javascript:;" onclick="adminmenuaction('toggle',%cell_ID%,%cell_IsVisible%);">%cell_IsVisible_text%</a></td>
+             <td>
+              <a href="javascript:;" onclick="adminmenuaction('edit',%cell_ID%);">Edit</a>
+              <a href="javascript:;" onclick="adminmenuaction('delete',%cell_ID%);">Delete</a>
+              <block_move_down>
+               <a href="javascript:;" onclick="adminmenuaction('movedown', %cell_ID%, %cell_Order%, %cell_ParentID% );">Move down</a>
+              </block_move_down>
+              <block_move_up>
+               <a href="javascript:;" onclick="adminmenuaction('moveup'  , %cell_ID%, %cell_Order%, %cell_ParentID% );">Move up</a>
+              </block_move_up>
+             </td>
+            </tr>
+           </loop_table_row>
+          </table>
+         </loop_table>
+        </div>
+       </adminpage3>
+      </adminpages_parent>
+     </div>
+    </td>
+   </tr>
+  </table>
+ </body>
+</html>

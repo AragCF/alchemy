@@ -1,0 +1,204 @@
+<table class=editor id=AddMoney>
+ <col width=200px>
+ <col width=500px>
+ <tr class=hidden>
+  <td class=l colspan=2>
+   <h4 id=AddProject_Caption><ru>Создать проект</ru><en>Create new project</en></h4>
+  </td>
+ </tr>
+ <tr class=hidden>
+  <td class=r>
+   <b>ID:</b>
+  </td>
+  <td class=l>
+   <cinputs ID>%ID%</cinputs>
+  </td>
+  <td class="r" id="debug" rowspan="10">
+   
+  </td>
+ </tr>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <tr>
+  <td class=r>
+   <ru>Тип записи:</ru>
+   <en>Record type:</en>
+  </td>
+  <td class="l">
+   <select class=editoritem id=TypeID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_typeids>
+     <option id="%ID%" %selected%>%Description%</option>
+    </loop_typeids>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Date and time</en><ru>Дата и время</ru>:
+  </td>
+  <td class="l">
+   <cinputs DateAdded>%DateAdded%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Value</en><ru>Значение</ru>:
+  </td>
+  <td class="l">
+   <cinputs Value>%Value%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Account</en><ru>Счёт</ru>:
+  </td>
+  <td class="l">
+   <select class=editoritem id=AccountID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_accounts>
+     <option id="%ID%" %selected%>%Description%</option>
+    </loop_accounts>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Object</en><ru>Объект</ru>:
+  </td>
+  <td class="l">
+   <select class=editoritem id=ObjectID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <option id="0"><en>Unknown</en><ru>Неизвестен</ru></option>
+    <loop_objects>
+     <option id="%ID%" %selected%>%Address% (%Firstname% %Surname%)</option>
+    </loop_objects>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Customer</en><ru>Покупатель</ru>:
+  </td>
+  <td class="l">
+   <select class=editoritem id=CustomerID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <option id="0"><en>Unknown</en><ru>Неизвестен</ru></option>
+    <loop_customers>
+     <option id="%ID%" %selected%>%Name% %Phone% (%Firstname% %Surname%)</option>
+    </loop_customers>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>User</en><ru>Пользователь</ru>:
+  </td>
+  <td class="l">
+   <select class=editoritem id=UserID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <option id="0"><en>Unknown</en><ru>Неизвестен</ru></option>
+    <loop_users>
+     <option id="%ID%" %selected%>%Firstname% %Surname%</option>
+    </loop_users>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <ru>Группа:</ru>
+   <en>Group:</en>
+  </td>
+  <td class="l">
+   <select class=editoritem id=GroupID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_groupids>
+     <option id="%ID%" %selected%>%Description%</option>
+    </loop_groupids>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <ru>Источник (площадка)</ru><en>Source</en>:
+  </td>
+  <td class=l>
+   <p>
+    <select class=filteritem id=SourceID>
+     <option id="0"><ru>Не указана</ru><en>Not set</en></option>
+     <loop_customersources_objects>
+      <option id="%ID%" %selected%>Объекты (собственники) - %Description%</option>
+     </loop_customersources_objects>
+     <loop_customersources_customers>
+      <option id="%ID%" %selected%>Покупатели - %Description%</option>
+     </loop_customersources_customers>
+    </select>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class="r">
+   <ru>Организация:</ru>
+   <en>Place name:</en>
+  </td>
+  <td class="l">
+   <cinputs PlaceName_text>%PlaceName%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  </td>
+  <td class="l">
+   <select size=5 class=editoritem id=PlaceName onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_placenames>
+     <option id="%ID%" %selected%>%PlaceName%</option>
+    </loop_placenames>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class="r">
+   <ru>Тип организации:</ru>
+   <en>Place type:</en>
+  </td>
+  <td class="l">
+   <cinputs PlaceType_text>%PlaceType%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  </td>
+  <td class="l">
+   <select size=5 class=editoritem id=PlaceType onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_placetypes>
+     <option id="%ID%" %selected%>%PlaceType%</option>
+    </loop_placetypes>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Content</en><ru>Комментарий</ru>:
+  </td>
+  <td class="l">
+   <textarea id=Content>%Content%</textarea>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+  </td>
+  <td class="l" id="result">
+   
+  </td>
+ </tr>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</table>

@@ -1,0 +1,57 @@
+<table class="adminpanel">
+ <tr>
+  <td>
+   <div class="groupheader">Выгрузка базы (импорт)</div>
+   <div class="groupcontainer" id="exportToExcel">
+    <table>
+     <col>
+     <col width=170px>
+     <tr>
+      <td>
+       <comctl 1  exportToExcel document-excel-table.png><ru>Выгрузка в Excel</ru><en>Export to Excel</en></comctl>
+      </td>
+      <td>
+       <div id="exportToExcel_rslt"></div>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <div class="groupheader">Интеграция (импорт)</div>
+   <div class="groupcontainer" id="exportToExcel">
+    <table>
+     <col>
+     <col width=170px>
+     <tr>
+      <td>
+       Выберите файл:<br>
+       <form id='uploadform' name='uploadform' target='uploadbuffer' enctype='multipart/form-data' method='post' action='index.php'>
+        <p>
+         <input type='hidden' name='action'     id='action' value='integration'>
+         <input type='file'   name='fileupload' id='fileupload' onchange='doupload();' accept_='application/vnd.ms-excel'>
+        </p>
+       </form>
+       
+       <p>
+        <span id='fileinfo0'></span>&nbsp;
+       </p>
+       
+       <p>
+        <span id='status0'>Status</span>
+        <iframe name='uploadbuffer' id='uploadbuffer' onload='uploaded(this.id);' ></iframe>
+       <p>
+       
+       
+      </td>
+      <td>
+       <div id="exportToExcel_rslt"></div>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+</table>

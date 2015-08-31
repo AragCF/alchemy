@@ -1,0 +1,11 @@
+<table class=spantbl>
+ <tr>
+  <td>
+   <img src='%imgfolder%/cross.png'>
+  </td>
+  <td>
+   <ru>Неверный логин или пароль.</ru>
+   <en>Wrong username or password.</en>
+  </td>
+ </tr>
+</table>

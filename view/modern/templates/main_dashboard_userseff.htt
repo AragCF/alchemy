@@ -1,0 +1,34 @@
+<h2>%caption%</h2>
+
+<table class="tbl_dashboard">
+ <tr>
+  <td>
+   <table class="userseff">
+    <col width=200px>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <col width=10px><col>
+    <tr><th></th><th colspan=3>Объектов</th><th colspan=3>Покупателей</th><th colspan=3>Задатков</th><th colspan=3>Сделок</th><th colspan=3>Событий</th></tr>
+    <loop>
+     <tr class="tr_%total%">
+      <td>%Description%</td>
+      <td>%Objects_c%        </td><td class="total_p">%Objects_p%%</td><td class="total_p"><div style="background: #%Objects_RGB%; width: %Objects_r%px;">&nbsp;</div></td>
+      <td>%Customers_c%      </td><td class="total_p">%Customers_p%%</td><td class="total_p"><div style="background: #%Customers_RGB%; width: %Customers_r%px;">&nbsp;</div></td>
+      <td>%Deposits_c%       </td><td class="total_p">%Deposits_p%%</td><td class="total_p"><div style="background: #%Deposits_RGB%; width: %Deposits_r%px;">&nbsp;</div></td>
+      <td>%Handshakes_c%     </td><td class="total_p">%Handshakes_p%%</td><td class="total_p"><div style="background: #%Handshakes_RGB%; width: %Handshakes_r%px;">&nbsp;</div></td>
+      <td>%Events_c%         </td><td class="total_p">%Events_p%%</td><td class="total_p"><div style="background: #%Events_RGB%; width: %Events_r%px;">&nbsp;</div></td>
+     </tr>
+    </loop>
+   </table>
+  </td>
+ </tr>
+</table>

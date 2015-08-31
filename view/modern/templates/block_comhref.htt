@@ -1,0 +1,12 @@
+<a href='?%id%=%groupid%' id='%id%' class='%ctltype%' title='%caption%'>
+ <table class='%groupid%'>
+  <tr>
+   <td>
+    <img src='%imgfolder%/%subtype%'>
+   </td>
+   <td class=td_1 id='c%id%'>
+    %caption%
+   </td>
+  </tr>
+ </table>
+</a>

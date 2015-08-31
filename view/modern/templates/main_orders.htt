@@ -1,0 +1,32 @@
+<ru>Количество записей</ru><en>Number of entries</en>: %numrows%
+
+<block_norows>
+ <p><en>No data</en><ru>Нет данных</ru></p>
+</block_norows>
+
+<loop_table>
+ <table class=tableview>
+  <tr class=row1 id=tableheader>
+   <th>ID</th>
+   <th>DateAdded</th>
+   <th>UserTime</th>
+   <th>Value</th>
+   <th colspan=3>Tools</th>
+  </tr>
+  <loop_table_row>
+   <tr class=row%c%>
+   <td id='ID_%ID%'>%ID%</td>
+   <td id='DateAdded_%ID%'>%DateAdded%</td>
+   <td id='UserTime_%ID%'>%UserTime%</td>
+   <td id='Value_%ID%'>%Value%</td>
+   <td>
+    <comctl %id%  editDiary pencil.png><ru>Правка</ru><en>Edit</en></comctl>
+   </td>
+   <td>
+    <comctl %id%  deleteDiary cross-script.png><ru>Удалить</ru><en>Delete</en></comctl>
+   </td>
+   </tr>
+  </loop_table_row>
+ </table>
+</loop_table>
+

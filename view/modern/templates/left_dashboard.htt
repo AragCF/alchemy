@@ -1,0 +1,271 @@
+<script src="controller/js/raphael.2.1.0.min.js"></script>
+<script src="controller/js/justgage.1.0.1.min.js"></script>
+
+<p class="leftcontent">
+ <span id='status0'>Status</span>
+<p>
+
+<div class="clrln leftcontent" id='settings_pl'>
+ <table class=editor id=leftfilters>
+  <tr>
+   <td class=l colspan=2><h3><en>Reports</en><ru>Отчёты</ru></h3></td>
+  </tr>
+  <tr class="hidden_">
+   <td class=l colspan=2 id=r_cutby>
+    <p>
+     <frb common  r_cutby><ru>Общий отчёт</ru><en>Common report</en></frb>
+     <frb ads 1 r_cutby><ru>Отчёт по рекламе</ru><en>Ads report</en></frb>
+     <frb customersources  r_cutby><ru>Отчёт по площадкам</ru><en>Report by source</en></frb>
+     <frb markets  r_cutby><ru>Отчёт по рынкам</ru><en>Report by market</en></frb>
+     <frb users  r_cutby><ru>Отчёт по менеджерам</ru><en>Report by manager</en></frb>
+     <frb userseff  r_cutby><ru>Эффективность менеджеров</ru><en>Managers effectivity</en></frb>
+     <!--
+     <frb month  r_cutby><ru>Отчёт за месяц</ru><en>Monthly report</en></frb>
+     <frb year  r_cutby><ru>Отчёт за год</ru><en>Yearly report</en></frb>
+     <frb full  r_cutby><ru>Полный отчёт</ru><en>Full report</en></frb>
+     -->
+     <frb monthly  r_cutby><ru>Отчёт по месяцам</ru><en>Report by months</en></frb>
+     <frb deposits  r_cutby><ru>Отчёт по задаткам</ru><en>Report by deposits</en></frb>
+     <frb handshakes  r_cutby><ru>Отчёт по сделкам</ru><en>Report by handshakes</en></frb>
+    </p>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <p>
+     <ru>Менеджер</ru><en>Manager</en>:
+    </p>
+   </td>
+   <td class=l>
+    <p>
+     <select class=filteritem id=s_UserID>
+      <option id="0"><ru>Любой</ru><en>Any</en></option>
+      <loop_users>
+       <option id="%ID%" %selected%>%Firstname% %Surname%</option>
+      </loop_users>
+     </select>
+    </p>
+   </td>
+  </tr>
+  
+ </table>
+</div>
+
+<p>
+ <input type=button onclick='showcache();'  value='Show cache' class='hidden'>
+</p>
+
+<hr>
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=20%><col width=60%><col width=20%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>Izum Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+      
+<block_popupdefault>
+<table class=editor id=AddMoney>
+ <col width=200px>
+ <col width=500px>
+ <tr class=hidden>
+  <td class=l colspan=2>
+   <h4 id=AddProject_Caption><ru>Создать проект</ru><en>Create new project</en></h4>
+  </td>
+ </tr>
+ <tr class=hidden_>
+  <td class=r>
+   <b>ID:</b>
+  </td>
+  <td class=l>
+   <cinputs ID>%ID%</cinputs>
+  </td>
+  <td class="r" id="debug" rowspan="10">
+   
+  </td>
+ </tr>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <tr>
+  <td class=r>
+   <ru>Тип записи:</ru>
+   <en>Record type:</en>
+  </td>
+  <td class="l">
+   <select class=editoritem id=TypeID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_typeids>
+     <option id="%ID%" %selected%>%Description%</option>
+    </loop_typeids>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Date and time</en><ru>Дата и время</ru>:
+  </td>
+  <td class="l">
+   <cinputs DateAdded>%DateAdded%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Value</en><ru>Значение</ru>:
+  </td>
+  <td class="l">
+   <cinputs Value>%Value%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Account</en><ru>Счёт</ru>:
+  </td>
+  <td class="l">
+   <select class=editoritem id=AccountID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_accounts>
+     <option id="%ID%" %selected%>%Description%</option>
+    </loop_accounts>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Object</en><ru>Объект</ru>:
+  </td>
+  <td class="l">
+   <select class=editoritem id=ObjectID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_objects>
+     <option id="%ID%" %selected%>%Status%</option>
+    </loop_objects>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <ru>Группа:</ru>
+   <en>Group:</en>
+  </td>
+  <td class="l">
+   <select class=editoritem id=GroupID onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_groupids>
+     <option id="%ID%" %selected%>%Description%</option>
+    </loop_groupids>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class="r">
+   <ru>Организация:</ru>
+   <en>Place name:</en>
+  </td>
+  <td class="l">
+   <cinputs PlaceName_text>%PlaceName%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  </td>
+  <td class="l">
+   <select size=5 class=editoritem id=PlaceName onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_placenames>
+     <option id="%ID%" %selected%>%PlaceName%</option>
+    </loop_placenames>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class="r">
+   <ru>Тип организации:</ru>
+   <en>Place type:</en>
+  </td>
+  <td class="l">
+   <cinputs PlaceType_text>%PlaceType%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  </td>
+  <td class="l">
+   <select size=5 class=editoritem id=PlaceType onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+    <loop_placetypes>
+     <option id="%ID%" %selected%>%PlaceType%</option>
+    </loop_placetypes>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <en>Content</en><ru>Комментарий</ru>:
+  </td>
+  <td class="l">
+   <textarea id=Content>%Content%</textarea>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+  </td>
+  <td class="l" id="result">
+   
+  </td>
+ </tr>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</table>
+</block_popupdefault>
+
+
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"    value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"       value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"  value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"     value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"     value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"      value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+
+

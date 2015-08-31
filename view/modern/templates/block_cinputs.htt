@@ -1,0 +1,1 @@
+<input class="input_grayed" type=text id='%id%' onkeyup='cinput_keyup(this.id, event);' value='%caption%' %param1%>

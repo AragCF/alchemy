@@ -1,0 +1,383 @@
+<block_typepicture_1>
+ <img src="%imgfolder%/telephone.png">
+</block_typepicture_1>
+<block_typepicture_2>
+ <img src="%imgfolder%/hand-shake.png">
+</block_typepicture_2>
+
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l>
+   <comctl -1  newObject plus.png><ru>Добавить запись</ru><en>Add new record</en></comctl>
+  </td>
+ </tr>
+</table>
+
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=20%><col width=60%><col width=20%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+      
+<block_popupdefault>
+ <table class=editor id=AddCalls>
+  <col width=250><col width=400><col>
+  <tr class=hidden>
+   <td class=l colspan=2>
+    <h4 id=AddProject_Caption><ru>Создать запись</ru><en>Create new record</en></h4>
+   </td>
+  </tr>
+  <tr class="hidden_">
+   <td class=r>
+    <b>ID:</b>
+   </td>
+   <td class=l>
+    <cinputs ID>%ID%</cinputs>
+   </td>
+   <td class="r" id="debug" rowspan="10">
+    123
+   </td>
+  </tr>
+  <tr class="hidden_">
+   <td class=r>
+    <b>UserID:</b>
+   </td>
+   <td class=l>
+    <cinputs UserID>%UserID%</cinputs>
+   </td>
+  </tr>
+  <tr>
+   <td class=r>
+    <b><en>Date and time</en><ru>Дата, время</ru>:</b>
+   </td>
+   <td class=l>
+    <cinputs DateTarget>%DateTarget%</cinputs>
+   </td>
+  </tr>
+  <tr>
+   <td class=r>
+    <b><en>Manager</en><ru>Менеджер</ru>:</b>
+   </td>
+   <td class=l>
+    %Firstname% %Surname%
+   </td>
+  </tr>
+  <tr>
+   <td class=r>
+    <b>
+     <ru>Источник (площадка)</ru><en>Source</en>:
+    </b>
+   </td>
+   <td class=l>
+    <p>
+     <select class=filteritem id=SourceID>
+      <loop_customersources>
+       <option id="%ID%" %selected%>%Description%</option>
+      </loop_customersources>
+     </select>
+    </p>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <b><en>Phone</en><ru>Номер телефона</ru>:</b>
+   </td>
+   <td class=l>
+    <cinputs Phone>%Phone%</cinputs>
+   </td>
+   <td class=li>
+    <p>Например, +79376411426</p>
+   </td>
+  </tr>
+  
+  <tr class=hidden>
+   <td class=r>
+    <b>
+     <ru>Направление</ru>
+     <en>Direction</en>
+    </b>
+   </td>
+   <td class=l>
+    <p>
+     <select class=filteritem id=DirectionID>
+      <loop_calldirections>
+       <option id="%ID%" %selected%>%Description%</option>
+      </loop_calldirections>
+     </select>
+    </p>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <b><en>Address</en><ru>Адрес</ru>:</b>
+   </td>
+   <td class=l>
+    <cinputs Address>%Address%</cinputs>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <b><en>District</en><ru>Район области</ru>:</b>
+   </td>
+   <td class=l>
+    <p>
+     <select class="filteritem" id="DistrictID" onchange='fillSelect(1);' onclick='fillSelect(1);'>
+      <loop_districts>
+       <option id="%ID%" %selected%>%Description%</option>
+      </loop_districts>
+     </select>
+    </p>
+   </td>
+  </tr>
+  
+  
+  
+  
+  <tr>
+   <td class=r><b>Населённый пункт:</b></td>
+   <td>
+    <select id='addr2'>
+     <loop_addr_default>
+      <option id="136401654000">Береза</option>
+      <option id="136401656001">Винтай</option>
+      <option id="136401364000">Железнодорожный</option>
+      <option id="136401656003">Задельное</option>
+      <option id="136401656002">Казарма 135 км</option>
+      <option id="136401368000">Кировский</option>
+      <option id="136401000001">Козелки</option>
+      <option id="136401373000">Красноглинский</option>
+      <option id="136401378000">Куйбышевский</option>
+      <option id="136401383000">Ленинский</option>
+      <option id="136401385000">Октябрьский</option>
+      <option id="136401656005">Пискалинский Взвоз</option>
+      <option id="136401656000">Прибрежный</option>
+      <option id="136401386000">Промышленный</option>
+      <option id="236401000000" selected>САМАРА</option>
+      <option id="136401388000">Самарский</option>
+      <option id="136401392000">Советский</option>
+      <option id="136401000002">Ясная Поляна</option>
+      <option id="136401656004">ст Пискалы</option>
+     </loop_addr_default>
+     <loop_addr>
+      <option id="%id%">%name%</option>
+     </loop_addr>
+    </select>
+   </td>
+   <td id="loader_addr1">
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td class=r>
+    <b><en>Plan type</en><ru>Тип планировки</ru>:</b>
+   </td>
+   <td class=l>
+    <p>
+     <select class="filteritem" id="HouseTypeID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+      <loop_housetypes>
+       <option id="%ID%" %selected%>%Description%</option>
+      </loop_housetypes>
+     </select>
+    </p>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <b><en>Floor</en><ru>Этаж</ru>:</b>
+   </td>
+   <td class=l>
+    <cinputs Floor>%Floor%</cinputs>
+    <b><en>of</en><ru>из</ru></b>
+    <cinputs Floors>%Floors%</cinputs>
+    <b><en>NumRooms</en><ru>Комнат</ru>:</b>
+    <cinputs NumRooms>%NumRooms%</cinputs>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <b><en>Cost</en><ru>Цена</ru>:</b>
+   </td>
+   <td class=l>
+    <cinputs Cost>%Cost%</cinputs>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <b>
+     <ru>Тип звонившего</ru><en>CustomerTypeID</en>:
+    </b>
+   </td>
+   <td class=l>
+    <p>
+     <select class="filteritem" id="CustomerTypeID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+      <loop_customertypes>
+       <option id="%ID%" %selected%>%Description%</option>
+      </loop_customertypes>
+     </select>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class=r>
+    <b>
+     <ru>Подтип звонившего</ru><en>Customer subtype</en>:
+    </b>
+   </td>
+   <td class=l>
+    <p>
+     <select class="filteritem" id="CustomerSubtypeID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+      <loop_customersubtypes>
+       <option id="%ID%" %selected%>%Description%</option>
+      </loop_customersubtypes>
+     </select>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td class=r>
+    <b>
+     <ru>Способ оплаты</ru><en>MethodOfPaymentID</en>:
+    </b>
+   </td>
+   <td class=l>
+    <p>
+     <select class=filteritem id=MethodOfPaymentID>
+      <loop_methodsofpayment>
+       <option id="%ID%" %selected%>%Description%</option>
+      </loop_methodsofpayment>
+     </select>
+    </p>
+   </td>
+  </tr>
+  
+  
+  <tr class=t>
+   <td class=r>
+    <b><en>Comments</en><ru>Комментарии</ru>:</b>
+   </td>
+   <td class=l>
+    <ctxts Status>%Status%</ctxts>
+   </td>
+  </tr>
+  
+  <tr class=t>
+   <td class=r>
+    <b><en>Status history</en><ru>История статусов</ru>:</b>
+   </td>
+   <td class=l colspan=3>
+    <table id="statuses">
+     <block_statuses>
+      <tr class=hidden><td>Дата, время</td><td>Длительность</td><td>Тип</td><td>Комментарий</td><td>Следующий шаг</td></tr>
+      <loop_statuses>
+       <tr><td class=l>%typepicture% %DateTime% (%Duration%) %Comment% -> %NextStep%</td></tr>
+      </loop_statuses>
+     </block_statuses>
+    </table>
+   </td>
+  </tr>
+  
+  <tr class=t>
+   <td class=r>
+    <b><en>New status</en><ru>Новый статус</ru>:</b>
+   </td>
+   <td class=l colspan=3>
+    <table id="NewStatus">
+     <tr><td class="r">Дата, время:</td><td class="l"><cinputs DateTime></cinputs></td><td>Длительность:</td><td><cinputs Duration_Min></cinputs></td><td>мин.</td><td><cinputs Duration_Sec></cinputs></td><td>сек.</td><td>Тип:</td><td><select id="TypeID"><loop_statustypes><option id="%ID%" %selected%>%Description%</option></loop_statustypes></select></td></tr>
+     <tr><td class="r">Комментарий:</td><td class="l" colspan=8><cinputs Comment></cinputs></td></tr>
+     <tr><td class="r">Следующий шаг:</td><td class="l" colspan=8><cinputs NextStep></cinputs></td><td><input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_addStatus" value="<en>Add</en><ru>Добавить</ru>"></td></tr>
+    </table>
+   </td>
+  </tr>
+  
+  
+  <tr>
+   <td class=r>
+    
+   </td>
+   <td class=l colspan=3>
+    <fcb TargetContact %TargetContact%>Контакт с целью</fcb>
+    <fcb TargetMeeting %TargetMeeting%>Встреча на объекте</fcb>
+    <fcb OfficeVisit %OfficeVisit%>Посещение офиса</fcb>
+    <fcb ObjectShow %ObjectShow%>Показ объекта</fcb>
+    <fcb TargetAgreed %TargetAgreed%>Собственник согласен работать</fcb>
+    <fcb HasAgreement %HasAgreement%>Договор заключен</fcb>
+    <fcb DepositReceived %DepositReceived%>Задаток получен</fcb>
+    <fcb Handshake %Handshake%>Сделка совершена</fcb>
+   </td>
+  </tr>
+  
+  <tr class=hidden>
+   <td class=r>
+    
+   </td>
+   <td class=l>
+    <comctl -1  addObject task--plus.png><ru>Создать запись</ru><en>Add record</en></comctl>
+   </td>
+  </tr>
+  <tr>
+   <td class=r>
+    
+   </td>
+  </tr>
+ </table>
+</block_popupdefault>
+
+
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td class=l id=result>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_saveandclose"  value="<en>Save and close</en><ru>Сохранить и закрыть</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"       value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"          value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"     value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"        value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"        value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"         value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+

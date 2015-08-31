@@ -1,0 +1,236 @@
+<div class=hidden id=option_any>
+ <option id=-1><en>Any</en><ru>Любой</ru></option>
+</div>
+
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=r>
+   <b><en>Assigned to</en><ru>Фильтр по исполнителю</ru>:</b>
+  </td>
+  <td class=l>
+   <select class=filteritem id=flt_AssignedTo>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Project</en><ru>Фильтр по названию проекта</ru>:</b>
+  </td>
+  <td class=l>
+   <select class=filteritem id=flt_ProjectID>
+   </select>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Task list</en><ru>Фильтр по списку задач</ru>:</b>
+  </td>
+  <td class=l>
+   <select class=filteritem id=flt_TaskListID>
+   </select>
+  </td>
+ </tr>
+</table>
+<hr>
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l>
+   <comctl -1  newTask task--plus.png><ru>Добавить новую задачу</ru><en>Add a new task</en></comctl>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+   <a href="javascript:;" onclick="toggle('ajaxdebug');">Toggle debug</a>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+   <div id="ajaxdebug" class="hidden"></div>
+  </td>
+ </tr>
+ 
+</table>
+
+
+
+
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=20%><col width=60%><col width=20%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>cf_timeman Message Window</en><ru>Окно сообщений cf_timeman</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=content>
+<table class="fullwidth">
+ <tr id=vat>
+  <td id=vat>
+   <table id=AddTask>
+    <tr class=hidden>
+     <td class=r>
+      <b>ID:</b>
+     </td>
+     <td class=l>
+      <cinputs ID></cinputs>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Title</en><ru>Заголовок</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs Title></cinputs>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Due date</en><ru>Дедлайн</ru>:</b>
+     </td>
+     <td class=l>
+      <calendar DateDue>%today%</calendar>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Labor</en><ru>Трудозатраты</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs Labor>Трудозатраты</cinputs>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Assigned to</en><ru>Исполнитель</ru>:</b>
+     </td>
+     <td class=l>
+      <select id=AssignedTo>
+       <block_AssignedTo>
+        <option id=%ID% %selected%>%Username%</option>
+       </block_AssignedTo>
+      </select>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Project</en><ru>Название проекта</ru>:</b>
+     </td>
+     <td class=l>
+      <select id=ProjectID>
+       <block_ProjectID>
+        <option id=%ID% %selected%>%Title%</option>
+       </block_ProjectID>
+      </select>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Task list</en><ru>Список задач</ru>:</b>
+     </td>
+     <td class=l>
+      <select id=TaskListID>
+       <block_TaskListID>
+        <option id=%ID% %selected%>%Title%</option>
+       </block_TaskListID>
+      </select>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Priority</en><ru>Важность</ru>:</b>
+     </td>
+     <td class=l id=r_priorityid>
+      <block_PriorityID>
+       <frb %ID% %c% r_priorityid>%Title%</frb>
+      </block_PriorityID>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Detailed description</en><ru>Подробное описание задачи</ru>:</b>
+     </td>
+     <td class=l>
+      <ctxts Description></ctxts>
+     </td>
+    </tr>
+    <tr class=hidden>
+     <td class=r>
+     </td>
+     <td class=l>
+      <comctl -1  addTask task--plus.png><ru>Сохранить задачу</ru><en>Save task</en></comctl>
+      <comctl -1  newTask eraser.png><ru>Сброс</ru><en>Clear</en></comctl>
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+     </td>
+     <td class=l id=addTaskRslt>
+     </td>
+    </tr>
+   </table>
+  </td>
+  <td id=vat>
+   <table id="popupcomments">
+    <tr>
+     <td class=l>
+      <b><en>Comments</en><ru>Комментарии</ru>:</b>
+     </td>
+    </tr>
+    <tr>
+     <td id='comments'>123</td>
+    </tr>
+    <tr>
+     <td>
+      <ctxts CommentToTask_-1></ctxts><br>
+      <comctl sendComment_id  sendComment mail-send.png><ru>Отправить</ru><en>Send</en></comctl>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+      
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"    value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"       value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"  value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"     value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"     value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"      value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+
+
+
+

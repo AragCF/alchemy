@@ -1,0 +1,11 @@
+<a href='javascript:;' id='%id%' onclick='btn_click(this.id,"%groupid%");' title='%caption%' class='comctl'>
+ <table>
+  <col width=20>
+  <col>
+  <tr>
+   <td class=td_0>
+    <img src='%imgfolder%/%subtype%'>
+   </td>
+  </tr>
+ </table>
+</a>

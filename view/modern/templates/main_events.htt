@@ -1,0 +1,23 @@
+<ru>Количество записей</ru><en>Number of entries</en>: %numrows%
+<loop_table>
+ <checkbox_th>
+  <th width=16px><a href="javascript:;" onclick="checkboxclick(-1);"><div class=cf_checkboxes id='-1' title='<en>Select all/Clear selection</en><ru>Выделить всё/Снять выделение</ru>'></div></a></th>
+ </checkbox_th>
+ <checkbox_td>
+  <td><a href="javascript:;" onclick="checkboxclick(%id%);"><div class=cf_checkbox%checked% id='checkbox_%id%'></div></a></td>
+ </checkbox_td>
+ <table class=tableview>
+  <tr class=row1 id=tableheader>
+   <loop_table_header>
+    <th>%th%</th>
+   </loop_table_header>
+  </tr>
+  <loop_table_row>
+   <tr class=row%c%>
+   <loop_table_cell>
+    <td>%celldata%</td>
+   </loop_table_cell>
+   </tr>
+  </loop_table_row>
+ </table>
+</loop_table>

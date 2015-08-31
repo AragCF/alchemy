@@ -1,0 +1,309 @@
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=c colspan=2><h3><en>Filter</en><ru>Фильтр</ru></h3></td>
+ </tr>
+ <tr>
+  <td class=l id=s_ShowAll>
+   <p>
+    <fcb ShowAll  r_ShowAll><ru>Показать все</ru><en>Show all</en></fcb>
+   </p>
+  </td>
+ </tr>
+</table>
+
+<p>
+ <div id='tblstatus'>Status</div>
+</p>
+
+<hr>
+
+<block_adminonly>
+ <table class=editor id=leftfilters>
+  <tr>
+   <td class=l colspan=2>
+    <comctl -1  newUser plus.png><ru>Добавить пользователя</ru><en>Add new user</en></comctl>
+   </td>
+  </tr>
+ </table>
+</block_adminonly>
+
+
+<div id="popupdefault" class=hidden>
+ <table class=editorcontainer>
+  <col width=20%><col width=60%><col width=20%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+
+<block_popupdefault>
+<table class=editor id=AddUser>
+ <tr class=hidden>
+  <td class=l colspan=2>
+   <h4 id=AddProject_Caption><ru>Создать пользователя</ru><en>Create new user</en></h4>
+  </td>
+ </tr>
+ <tr class=hidden>
+  <td class=r>
+   <b>ID:</b>
+  </td>
+  <td class=l>
+   <cinputs ID>%ID%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Firstname</en><ru>Имя</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Firstname>%Firstname%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Surname</en><ru>Фамилия</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Surname>%Surname%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Middlename</en><ru>Отчество</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Middlename>%Middlename%</cinputs>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <b><en>Address</en><ru>Адрес</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Address>%Address%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Username</en><ru>Имя пользователя</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Username>%Username%</cinputs>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <b><en>Email</en><ru>Email</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Email>%Email%</cinputs>
+  </td>
+ </tr>
+ <tr class="hidden">
+  <td class=r>
+   <b><en>Email2</en><ru>Email2</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Email2>%Email2%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Skype</en><ru>Skype</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Skype>%Skype%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Phone</en><ru>Телефон</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Phone>%Phone%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>VK</en><ru>Вконтакте</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs VK>%VK%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Birth date</en><ru>Дата рождения</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs DateBirth>%DateBirth%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Date removed</en><ru>Дата увольнения</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs DateRemoved>%DateRemoved%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>About</en><ru>О себе</ru>:</b>
+  </td>
+  <td class=l>
+   <ctxts About>%About%</ctxts>
+  </td>
+ </tr>
+ 
+ <block_adminonly2>
+  <tr>
+   <td class=r>
+    <b><ru>Должность</ru><en>Position</en>:</b>
+   </td>
+   <td>
+    <select class=filteritem id=s_usergroupid>
+     <loop_usergroups>
+      <option id="%ID%" %selected%>%Title%</option>
+     </loop_usergroups>
+    </select>
+   </td>
+  </tr>
+ </block_adminonly2>
+ 
+ <block_editonly>
+  <tr>
+   <td class=r>
+    <b><en>New password</en><ru>Обновить пароль</ru>:</b>
+   </td>
+   <td class=l>
+    <cinputsp Password></cinputsp>
+   </td>
+   <td class=l>
+    <comctl -1  updatePassword disk.png><ru>Обновить пароль</ru><en>Update password</en></comctl>
+   </td>
+  </tr>
+  
+  <block_adminonly2>
+   <tr>
+    <td class=r>
+     <b><en>Privileges</en><ru>Привилегии</ru>:</b>
+    </td>
+    <td class=l colspan=2 id='privileges_td'>
+     <div id='privileges'>
+      <block_none>
+       Нет привилегий. Этот пользователь является клиентом.
+      </block_none>
+      
+      <block_p>
+       <loop_this>
+        <div class='floatl' id='usr_%ID%'><table><tr><td>%PageName%</td><td><comctl_po %ID%  removeUserPrivilege cross-script.png><ru>Удалить</ru><en>Remove</en></comctl_po></td></tr></table></div>
+       </loop_this>
+       <div class='clrln'></div>
+       <table>
+        <tr>
+         <td>
+          <ru>Добавить страницу</ru><en>Add page</en>:
+         </td>
+         <td>
+          <select id='pages'>
+           <loop_all>
+            <option id='%ID%'>%PageName%</option>
+           </loop_all>
+          </select>
+         </td>
+         <td>
+          <div class='clrln'></div>
+          <comctl -1  addUserPrivilege user--plus.png><ru>Добавить</ru><en>Add</en></comctl>
+         </td>
+        </tr>
+       </table>
+      </block_p>
+     </div>
+    </td>
+   </tr>
+   
+  </block_adminonly2>
+  
+  <tr>
+   <td class=r>
+    <b><en>Own login link</en><ru>Личная ссылка для входа</ru>:</b>
+   </td>
+   <td class=l>
+    <table>
+     <tr>
+      <td>
+       <a href="?k=%LoginKey%">Перейти</a>
+      </td>
+      <td>
+       <comctl -1  sendEmail mail-send.png><ru>Отправить</ru><en>Send</en></comctl>
+      </td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+ </block_editonly>
+ 
+ <tr class=hidden>
+  <td class=r>
+   
+  </td>
+  <td class=l>
+   <comctl -1  addUser task--plus.png><ru>Создать запись</ru><en>Add record</en></comctl>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   
+  </td>
+ </tr>
+</table>
+</block_popupdefault>
+
+
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td class=l id=result>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"    value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"       value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"  value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"     value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"     value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"      value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+

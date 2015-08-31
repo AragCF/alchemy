@@ -1,0 +1,13 @@
+<ru>Количество записей</ru><en>Number of entries</en>: %numrows%
+<loop_table>
+ <table class=newsview>
+  <loop_table_row>
+   <tr class=first_row>
+    <td><span class=news_date>%DateAdded%</span> <span class=news_title>[%ProjectTitle%] <b>%Title%</b></span> by %AddedByName%</td>
+   </tr>
+   <tr>
+    <td class=news_desc><p>%Description%</p></td>
+   </tr>
+  </loop_table_row>
+ </table>
+</loop_table>

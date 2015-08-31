@@ -1,0 +1,175 @@
+<p>
+ <span id='status0'>Status</span>
+<p>
+
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l>
+   <comctl -1  newObject plus.png><ru>Добавить запись</ru><en>Add new record</en></comctl>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=c colspan=2><h3><en>Filter</en><ru>Фильтр</ru></h3></td>
+ </tr>
+ <tr>
+  <td class=r>
+   <p>
+    <ru>Рынок</ru><en>Market</en>:
+   </p>
+  </td>
+  <td class=l>
+   <p>
+    <select class=filteritem id=s_MarketID>
+     <option id="0"><ru>Все типы</ru><en>All types</en></option>
+     <loop_markets>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_markets>
+    </select>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <p>
+    <ru>Менеджер</ru><en>Manager</en>:
+   </p>
+  </td>
+  <td class=l>
+   <p>
+    <select class=filteritem id=s_UserID>
+     <option id="0"><ru>Любой</ru><en>Any</en></option>
+     <loop_users>
+      <option id="%ID%" %selected%>%Firstname% %Surname%</option>
+     </loop_users>
+    </select>
+   </p>
+  </td>
+ </tr> 
+ 
+ <tr>
+  <td>
+  </td>
+  <td class=l id=s_ShowAll>
+   <p>
+    <fcb ShowAll  r_ShowAll><ru>Показать все</ru><en>Show all</en></fcb>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=c colspan=2>
+   <h4>
+    <ru>Комнат</ru><en>Rooms</en>:
+   </h4>
+  </td>
+ </tr>
+ <tr>
+  <td class=l id=s_Rooms colspan=2>
+   <p>
+    <loop_desiredrooms>
+     <fcb RoomsTotal_%ID%  r_rooms>%Description%</fcb>
+    </loop_desiredrooms>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=c colspan=2>
+   <h4>
+    <ru>Районы</ru><en>Districts</en>:
+   </h4>
+  </td>
+ </tr>
+ <tr>
+  <td class=l id=s_Districts colspan=2>
+   <p>
+    <loop_districts_2>
+     <fcb DistrictID_%ID%  r_districts><span title="%Description%">%Desc%</span></fcb>
+    </loop_districts_2>
+    <div class=clrln>
+     <a href="javascript:;" onclick="supertoggle('districts_2');">Города и районы области</a>
+    </div>
+    <div id='districts_2' class='hidden'>
+     <loop_districts_1>
+      <fcb DistrictID_%ID%  r_districts>%Description%</fcb>
+     </loop_districts_1>
+    </div>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=c colspan=2>
+   <h4>
+    <ru>Типы планировок</ru><en>House types</en>:
+   </h4>
+  </td>
+ </tr>
+ <tr>
+  <td class=l id=s_Housetypes colspan=2>
+   <p>
+    <loop_housetypes>
+     <fcb HouseTypeID_%ID%  r_housetypes>%Description%</fcb>
+    </loop_housetypes>
+   </p>
+  </td>
+ </tr>
+</table>
+
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=17%><col width=66%><col width=17%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class="c">
+     <div class=popupheader>
+      <div class=floatl><en>Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+      
+     </div><br>
+     <table class=popupbottombuttons>
+      <tr>
+       <td class=l id=result>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_saveandclose"  value="<en>Save and close</en><ru>Сохранить и закрыть</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"       value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"          value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"     value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"        value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"        value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"         value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+

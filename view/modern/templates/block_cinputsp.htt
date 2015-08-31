@@ -1,0 +1,1 @@
+<input class=input_grayed type=password id='%id%' onkeyup='cinput_keyup(this.id);' value='%caption%'>

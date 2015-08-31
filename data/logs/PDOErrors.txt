@@ -1,0 +1,122 @@
+2015-06-20 23:23:51	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mydefence.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mydefence.housetypes' doesn't exist
+2015-06-20 23:23:52	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mydefence.housetypes' doesn't exist
+2015-06-20 23:27:47	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-06-20 23:27:48	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-06-20 23:27:50	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-06-20 23:27:51	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-06-20 23:28:55	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-06-20 23:28:56	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projects' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projects' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projects' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projects' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projectrelations' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projectrelations' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projectrelations' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.projectrelations' doesn't exist
+2015-06-21 00:09:00	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-06-21 00:09:00	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customers.MarketID' in 'on clause'
+2015-06-21 00:09:01	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-06-21 00:09:01	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+2015-06-21 01:54:03	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+2015-06-21 01:54:10	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+2015-06-21 01:54:45	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ProjectID' in 'where clause'
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.%go%' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.%go%' doesn't exist
+SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.%go%' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.%go%' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.%go%' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.%go%' doesn't exist
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `ProjectID`' at line 4
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:31:12	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:31:12	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:31:39	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:31:39	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:31:40	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:31:40	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:20	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:20	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:21	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:21	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:27	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:27	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:28	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:28	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:33	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:33	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:53	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:33:53	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:34:08	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:34:08	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:34:12	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-06-25 11:34:12	SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+2015-07-31 14:55:55	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-07-31 14:55:56	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-07-31 14:56:07	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-07-31 14:56:08	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-07-31 14:56:56	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-07-31 14:56:56	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-07-31 14:57:07	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.desiredrooms' doesn't exist
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+2015-07-31 14:57:08	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.housetypes' doesn't exist
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lastid' in 'field list'
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'LastAccess' in 'field list'
+2015-08-10 15:39:11	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.stats_yt' doesn't exist
+2015-08-10 15:39:11	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alchemy.orders' doesn't exist
+SQLSTATE[42S22]: Column not found: 1054 Unknown column '*' in 'field list'
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DateMeasure' in 'field list'
+2015-08-11 18:33:29	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OR `ID`=1
+    ORDER BY `ID`' at line 3

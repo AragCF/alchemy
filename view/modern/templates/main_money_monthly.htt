@@ -1,0 +1,40 @@
+<table class=simplereport>
+ <loop_month>
+  <tr>
+   <td colspan=3>
+    <hr>
+   </td>
+  </tr>
+  <tr>
+   <td class=r>
+    <en>Year</en><ru>Год</ru>: %year%, <en>month</en><ru>месяц</ru>:
+   </td>
+   <td>
+    %month%
+   </td>
+  </tr>
+  <tr>
+   <td class=r><en>Expenditures this month</en><ru>Затраты в этом месяце</ru>:</td><td>%etm% rub.</td><td>(%aetm% rub. per day)</td>
+  </tr>
+  <tr>
+   <td class=r><en>Income this month</en><ru>Доход в этом месяце</ru>:</td><td>%itm% <en>rub</en><ru>руб</ru>.</td><td>(%aitm% <en>rub. per day</en><ru>руб. в день</ru>)</td>
+  </tr>
+  <tr>
+   <td class=r><en>External expenditure this month</en><ru>Внешних затрат в этом месяце</ru>:</td><td>%eetm% <en>rub</en><ru>руб</ru>.</td>
+  </tr>
+  <tr>
+   <td class=r><en>Internal expenditure this month</en><ru>Внутренних затрат в этом месяце</ru>:</td><td>%ietm% <en>rub</en><ru>руб</ru>.</td>
+  </tr>
+  <tr>
+   <td colspan=3>
+    <table class=simplereport>
+     <loop_bytype>
+      <tr>
+       <td class=r>%k%:</td><td>%v%</td>
+      </tr>
+     </loop_bytype>
+    </table>
+   </td>
+  </tr>
+ </loop_month>
+</table>

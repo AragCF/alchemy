@@ -1,0 +1,6 @@
+<ru>Сейчас вы будете перемещены на <a href="index.php">главную страницу</a>.</ru>
+<en>You are being redirected to the <a href="index.php">home page</a>.</en>
+
+<script language="javascript">
+ document.location = "index.php";
+</script> 

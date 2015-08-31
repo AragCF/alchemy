@@ -1,0 +1,1 @@
+<textarea class=input_grayed type=text href='javascript:;' id='%id%' onkeyup='cinput_keyup(this.id, event);'>%caption%</textarea>

@@ -1,0 +1,414 @@
+<block_typepicture_1>
+ <img src="%imgfolder%/telephone.png">
+</block_typepicture_1>
+<block_typepicture_2>
+ <img src="%imgfolder%/hand-shake.png">
+</block_typepicture_2>
+<block_typepicture_3>
+ <img src="%imgfolder%/mail.png">
+</block_typepicture_3>
+<block_typepicture_4>
+ <img src="%imgfolder%/home-share.png">
+</block_typepicture_4>
+<block_typepicture_5>
+ <img src="%imgfolder%/building.png">
+</block_typepicture_5>
+<block_typepicture_6>
+ <img src="%imgfolder%/building.png">
+</block_typepicture_6>
+
+<div id="district_tmp" class="hidden">
+ <block_district>
+  <div class="DistrictID" id="District_%ID%">
+   <table>
+    <tr>
+     <td id="Description">%Description%</td>
+     <td><comctl_po %ID%  deleteDistrict cross-script.png><ru>Удалить</ru><en>Delete</en></comctl_po></td>
+    </tr>
+   </table>
+  </div>
+ </block_district>
+</div>
+
+<table class=editor id=AddCalls>
+ <col width=240><col width=250><col width=240><col width=250>
+ <tr class=hidden>
+  <td class=l colspan=2>
+   <h4 id=AddProject_Caption><ru>Создать запись</ru><en>Create new record</en></h4>
+  </td>
+ </tr>
+ <tr class="hidden">
+  <td class=r>
+   <b>ID:</b>
+  </td>
+  <td class=l>
+   <cinputs ID>%ID%</cinputs>
+  </td>
+  <td class="r" id="debug" rowspan="10">
+   123
+  </td>
+ </tr>
+ <tr class="hidden">
+  <td class=r>
+   <b>UserID:</b>
+  </td>
+  <td class=l id='UserID_static'>%UserID%</td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Date and time</en><ru>Дата, время</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs DateTarget>%DateTarget%</cinputs>
+  </td>
+  
+  <td class=r>
+   <b><en>Manager</en><ru>Менеджер</ru>:</b>
+  </td>
+  <td class=l>
+   <block_userselector>
+    <select class=filteritem id=UserID>
+     <loop_users>
+      <option id="%ID%" %selected%>%Firstname% %Surname%</option>
+     </loop_users>
+    </select>
+   </block_userselector>
+   <block_nouserselector>
+    %Firstname% %Surname%
+   </block_nouserselector>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   <b><en>Phone</en><ru>Номер телефона</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Phone>%Phone%</cinputs>
+  </td>
+  
+  <td class=r>
+   <b>
+    <ru>Источник (площадка)</ru><en>Source</en>:
+   </b>
+  </td>
+  <td class=l>
+   <p>
+    <select class=filteritem id=SourceID>
+     <loop_customersources>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_customersources>
+    </select>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <b><en>Name</en><ru>Имя</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Name>%Name%</cinputs>
+  </td>
+  <td class=r>
+   <b><en>Email</en><ru>E-mail</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs Email>%Email%</cinputs>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <b><en>Max cost</en><ru>Макс. цена</ru>:</b>
+  </td>
+  <td class=l>
+   <cinputs MaxCost>%MaxCost%</cinputs>
+  </td>
+  <td class=r>
+   <b>
+    <ru>Способ оплаты</ru><en>MethodOfPaymentID</en>:
+   </b>
+  </td>
+  <td class=l>
+   <p>
+    <select class=filteritem id=MethodOfPaymentID>
+     <loop_methodsofpayment>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_methodsofpayment>
+    </select>
+   </p>
+  </td>
+ </tr>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <tr>
+  <td class=r>
+   <b>
+    <ru>Подтип звонившего</ru><en>Customer subtype</en>:
+   </b>
+  </td>
+  <td class=l>
+   <p>
+    <select class="filteritem" id="CustomerSubtypeID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+     <loop_customersubtypes>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_customersubtypes>
+    </select>
+   </p>
+  </td>
+  <td class=r>
+   <b>
+    <ru>Рынок</ru><en>Market type</en>:
+   </b>
+  </td>
+  <td class=l>
+   <p>
+    <select class="filteritem" id="MarketID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+     <loop_markets>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_markets>
+    </select>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr class=hidden>
+  <td class=r>
+   <b>
+    <ru>Направление</ru>
+    <en>Direction</en>
+   </b>
+  </td>
+  <td class=l>
+   <p>
+    <select class=filteritem id=DirectionID>
+     <loop_calldirections>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_calldirections>
+    </select>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <b><en>Districts</en><ru>Районы</ru>:</b>
+  </td>
+  <td class=l>
+   <p>
+    <select class="filteritem" id="DistrictID" onchange='addDistrict();' onclick='addDistrict();'>
+     <loop_districts>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_districts>
+    </select>
+   </p>
+  </td>
+  
+  <td class=r>
+   <b><en>Object</en><ru>Объект (собственник)</ru>:</b>
+  </td>
+  <td class=l>
+   <p>
+    <select class="filteritem" id="ObjectID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+     <option id="0"><en>Unknown</en><ru>Неизвестен</ru></option>
+     <loop_objects>
+      <option id="%ID%" %selected%>%Address% (%Firstname% %Surname%)</option>
+     </loop_objects>
+    </select>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r><i>Выберите район, чтобы добавить его.</i></td>
+  <td class=l id="Districts" colspan=3>
+   %Districts%
+  </td>
+ </tr>
+ 
+ 
+ 
+ <!--
+ <tr>
+  <td class=r><b>Населённый пункт:</b></td>
+  <td>
+   <select id='addr2'>
+    <loop_addr_default>
+     <option id="136401654000">Береза</option>
+     <option id="136401656001">Винтай</option>
+     <option id="136401364000">Железнодорожный</option>
+     <option id="136401656003">Задельное</option>
+     <option id="136401656002">Казарма 135 км</option>
+     <option id="136401368000">Кировский</option>
+     <option id="136401000001">Козелки</option>
+     <option id="136401373000">Красноглинский</option>
+     <option id="136401378000">Куйбышевский</option>
+     <option id="136401383000">Ленинский</option>
+     <option id="136401385000">Октябрьский</option>
+     <option id="136401656005">Пискалинский Взвоз</option>
+     <option id="136401656000">Прибрежный</option>
+     <option id="136401386000">Промышленный</option>
+     <option id="236401000000" selected>САМАРА</option>
+     <option id="136401388000">Самарский</option>
+     <option id="136401392000">Советский</option>
+     <option id="136401000002">Ясная Поляна</option>
+     <option id="136401656004">ст Пискалы</option>
+    </loop_addr_default>
+    <loop_addr>
+     <option id="%id%">%name%</option>
+    </loop_addr>
+   </select>
+  </td>
+  <td id="loader_addr1">
+  </td>
+ </tr>
+ -->
+ 
+ 
+ <tr class=t>
+  <td class=r>
+   <b><en>Plan type</en><ru>Тип планировки</ru>:</b>
+  </td>
+  <td class=l id="housetypes" colspan=3>
+   <p>
+    <loop_housetypes>
+     <fcb housetype_%ID% %fcb_checked%>%Description%</fcb>
+    </loop_housetypes>
+   </p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <b><en>Floor</en><ru>Этаж</ru>:</b>
+  </td>
+  <td class=l>
+    <select class="filteritem" id="FloorID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+     <loop_floors>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_floors>
+    </select>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+   <b><en>Num. of rooms</en><ru>Комнат</ru>:</b>
+  </td>
+  <td class=l id="desiredrooms" colspan=3>
+   <p>
+    <loop_desiredrooms>
+     <fcb desiredrooms_%ID% %fcb_checked%>%Description%</fcb>
+    </loop_desiredrooms>
+   </p>
+  </td>
+ </tr>
+ 
+ 
+ 
+ 
+ <tr class=t>
+  <td class=r>
+   <b><en>Comments</en><ru>Комментарии</ru>:</b>
+  </td>
+  <td class=l colspan=3>
+   <ctxts Status>%Status%</ctxts>
+  </td>
+ </tr>
+ 
+ <tr class=r id=nopadding>
+  <td class=r rowspan=4>
+   
+  </td>
+  <td class=l id='fcbs'>
+   <fcb TargetContact %TargetContact%>Контакт с целью</fcb>
+  </td>
+  <td class=l id='fcbs'>
+   <fcb OfficeVisit %OfficeVisit%>Посещение офиса</fcb>
+  </td>
+  <td class=l id='fcbs'>
+   <fcb ObjectShow %ObjectShow%>Показ объекта</fcb>
+  </td>
+ </tr>
+ <tr class=r id=nopadding>
+  <td class=l id='fcbs'>
+   <fcb HasAgreement %HasAgreement%>Договор заключен</fcb>
+  </td>
+  <td class=l id='fcbs'>
+   <fcb DepositReceived %DepositReceived%>Задаток получен</fcb>
+  </td>
+  <td class=l id='fcbs'>
+   <fcb Handshake %Handshake%>Сделка совершена</fcb>
+  </td>
+ </tr>
+ <tr class=r id=nopadding>
+  <td class=l colspan=2>
+   <fcb PhoneDenied %PhoneDenied%>Отказ от разговора по телефону</fcb>
+  </td>
+  <td class=l>
+   <fcb HasCertificate %HasCertificate%>Есть свидетельство</fcb>
+  </td>
+ </tr>
+ <tr class=r id=nopadding>
+  <td class=l>
+   <fcb MeetingDenied %MeetingDenied%>Отказ от встречи</fcb>
+  </td>
+  <td class=l>
+   <fcb ServiceDenied %ServiceDenied% Может&nbsp;быть&nbsp;дорого,&nbsp;может&nbsp;быть&nbsp;уже&nbsp;есть&nbsp;риелтор>Отказ от услуги</fcb>
+  </td>
+  <td class=l colspan=2>
+   <fcb SoldSelf %SoldSelf% Передумали&nbsp;продавать>Купили сами или другие риелторы</fcb>
+  </td>
+ </tr>
+ 
+ 
+ <tr class=t>
+  <td class=r>
+   <b><en>Status history</en><ru>История статусов</ru>:</b>
+  </td>
+  <td class=l colspan=3>
+   <table id="statuses">
+    <block_statuses>
+     <tr class=hidden><td>Дата, время</td><td>Длительность</td><td>Тип</td><td>Комментарий</td><td>Следующий шаг</td></tr>
+     <loop_statuses>
+      <tr><td class=l>%typepicture% %DateTime% %Address% (%Duration%) %Comment% -> %NextStep%</td></tr>
+     </loop_statuses>
+    </block_statuses>
+   </table>
+  </td>
+ </tr>
+ 
+ <tr class=t>
+  <td class=r>
+   <b><en>New status</en><ru>Новый статус</ru>:</b>
+  </td>
+  <td class=l colspan=3>
+   <table id="NewStatus">
+    <tr><td class="r">Дата, время:</td><td class="l"><cinputs DateTime></cinputs></td><td>Тип:</td><td><select id="TypeID"><loop_statustypes><option id="%ID%" %selected%>%Description%</option></loop_statustypes></select></td><td>Длительность:</td><td><cinputs Duration_Min></cinputs></td><td>мин.</td><td><cinputs Duration_Sec></cinputs></td><td class=l>сек.</td></tr>
+    <tr><td class="r">Адрес или номер телефона:</td><td class="l" colspan=6><cinputs sAddress></cinputs></td></tr>
+    <tr><td class="r">Комментарий:</td><td class="l" colspan=6><cinputs Comment></cinputs></td></tr>
+    <tr><td class="r">Следующий&nbsp;шаг:</td><td class="l" colspan=6><cinputs NextStep></cinputs></td><td colspan=2><input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_addStatus" value="<en>Add</en><ru>Добавить</ru>"></td></tr>
+   </table>
+  </td>
+ </tr>
+ 
+ 
+ <tr class=hidden>
+  <td class=r>
+   
+  </td>
+  <td class=l>
+   <comctl -1  addObject task--plus.png><ru>Создать запись</ru><en>Add record</en></comctl>
+  </td>
+ </tr>
+ <tr>
+  <td class=r>
+   
+  </td>
+ </tr>
+</table>

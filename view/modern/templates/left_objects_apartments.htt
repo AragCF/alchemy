@@ -1,0 +1,227 @@
+<input type=hidden size=5 value="%ID%" id="SubID">
+<table class="groupborder">
+ <tr class=vtop>
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class="objectdetails" id="apartments">
+     <tr class=objectdetails>
+      <td colspan=6>
+       <div class=groupheader><ru>Характеристики дома</ru><en>House information</en></div>
+      </td>
+     </tr>
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Этаж:</b>
+      </td>
+      <td class="l">
+       <cinputs Floor>%Floor%</cinputs>
+      </td>
+      <td class="r">
+       <b>из</b>
+      </td>
+      <td class="l">
+       <cinputs Floors>%Floors%</cinputs>
+      </td>
+      
+      <td class="r">
+       <b>Год постройки:</b>
+      </td>
+      <td class="l">
+       <cinputs Year>%Year%</cinputs>
+      </td>
+     </tr>
+     <tr>
+      <td class="r">
+       <b>Тип планировки:</b>
+      </td>
+      <td class="l">
+       <select id="HouseTypeID">
+        <loop_housetypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_housetypes>
+       </select>
+      </td>
+      
+      <td class="r">
+       <b>Материал стен:</b>
+      </td>
+      <td class="l">
+       <select id="WallsMaterialID">
+        <loop_wallsmaterials>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_wallsmaterials>
+       </select>
+      </td>
+      
+      <td class="r">
+       <b>Тип перекрытий:</b>
+      </td>
+      <td class="l">
+       <select id="OverlappingTypeID">
+        <loop_overlappingtypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_overlappingtypes>
+       </select>
+      </td>
+     </tr>
+     
+    </table>
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldvalue>
+       <p>
+        <fcb Security %Security%><en>Security</en><ru>Охрана</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Concierge %Concierge%><en>Concierge</en><ru>Консъерж</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb OperationService %OperationService%><en>OperationService</en><ru>Эксплуатационная служба</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Chute %Chute%><en>Chute</en><ru>Мусоропровод</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Gas %Gas%><en>Gas</en><ru>Газ</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Parking %Parking%><en>Parking</en><ru>Охрана</ru></fcb>
+       </p>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr class=vtop>
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class=objectdetails id="apartments">
+     <tr class=objectdetails>
+      <td colspan=6>
+       <div class=groupheader><ru>Характеристики квартиры</ru><en>Apartment information</en></div>
+      </td>
+     </tr>
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Комнат:</b>
+      </td>
+      <td class="l">
+       <cinputs RoomsTotal>%RoomsTotal%</cinputs>
+      </td>
+      
+ 	    <td class="r">
+       <b>Площадь общая:</b>
+      </td>
+      <td class="l">
+       <cinputs SpaceTotal>%SpaceTotal%</cinputs>
+      </td>
+      
+ 	    <td class="r">
+       <b>Площадь кухни:</b>
+      </td>
+      <td class="l">
+       <cinputs SpaceKitchen>%SpaceKitchen%</cinputs>
+      </td>
+     </tr>
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Изол. помещений:</b>
+      </td>
+      <td class="l">
+       <cinputs RoomsIsolated>%RoomsIsolated%</cinputs>
+      </td>
+      
+ 	    <td class="r">
+       <b>Площадь жилая:</b>
+      </td>
+      <td class="l">
+       <cinputs SpaceLiving>%SpaceLiving%</cinputs>
+      </td>
+      
+ 	    <td class="r">
+       <b>Кол-во балконов, лоджий:</b>
+      </td>
+      <td class="l">
+       <cinputs Balconies>%Balconies%</cinputs>
+      </td>
+     </tr>
+     
+     <tr class=objectdetails>
+      <td class="r">
+       <b>Тип планировки:</b>
+      </td>
+      <td class="l">
+       <select id="LayoutTypeID">
+        <loop_layouttypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_layouttypes>
+       </select>
+      </td>
+      
+ 	    <td class="r">
+       <b>Тип санузла:</b>
+      </td>
+      <td class="l">
+       <select id="ToiletTypeID">
+        <loop_toilettypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_toilettypes>
+       </select>
+      </td>
+      
+ 	    <td class="r">
+       <b>Состояние:</b>
+      </td>
+      <td class="l">
+       <select id="ConditionID">
+        <loop_conditions>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_conditions>
+       </select>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr class="vtop hidden">
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldname colspan=6>
+       <div class=groupheader><ru>Дополнительная информация</ru><en>Additional information</en></div>
+      </td>  
+     </tr>
+     
+     <tr class=objectdetails>
+      <td class=r>
+       <b>Источник:</b>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <select id="SourceID">
+         <loop_sources>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_sources>
+        </select>
+       </p>
+      </td>
+      
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+</table>

@@ -1,0 +1,98 @@
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=l colspan=2>
+   <h4><ru>Фильтры</ru><en>Filters</en></h4>
+  </td>
+ </tr>
+ <tr class=vtop>
+  <td class=r>
+   <b><ru>Отображать проекты</ru><en>Which projects do you wanna see here?</en>:</b>
+  </td>
+  <td class=l id=r_projectsview>
+   <frb all  r_projectsview><ru>Все</ru><en>All</en></frb>
+   <frb current 1 r_projectsview><ru>Только актуальные</ru><en>Actual only</en></frb>
+  </td>
+ </tr>
+</table>
+
+<p>
+ <div id='tblstatus'>Status</div>
+</p>
+
+<hr>
+
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l>
+   <!--
+   <strict_CreateProject_0>
+    strict_CreateProject_0
+   </strict_CreateProject_0>
+   <strict_CreateProject_1>
+    strict_CreateProject_1
+   </strict_CreateProject_1>
+   <strict_CreateProject_2>
+    strict_CreateProject_2
+   </strict_CreateProject_2>
+   -->
+   
+   <strict_CreateProject_2>
+    <comctl -1  newProject plus.png><ru>Добавить новый проект</ru><en>Add new project</en></comctl>
+   </strict_CreateProject_2>
+  </td>
+ </tr>
+</table>
+
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=15%><col width=70%><col width=15%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+
+
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_saveandclose"  value="<en>Save and close</en><ru>Сохранить и закрыть</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"    value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"       value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"  value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"     value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"     value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"      value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+

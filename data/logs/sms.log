@@ -1,0 +1,333 @@
+2015-06-25 00:01:12	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 00:02:20	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:25:37	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:29:58	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:30:14	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:30:29	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:35:37	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:35:44	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:46:32	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:54:20	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:54:28	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:55:16	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:55:22	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:55:35	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:55:42	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:55:52	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:56:01	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:56:10	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:56:18	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:56:39	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 02:56:47	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:03:58	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:04:46	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:05:15	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:09:50	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:14:08	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:14:24	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:14:29	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:14:48	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:14:52	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:15:00	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:15:07	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:15:28	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:15:37	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:15:47	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:16:02	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:16:25	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-06-25 03:16:33	Array
+(
+    [code] => 
+    [descr] => 
+)
+
+2015-08-07 02:31:45	Array
+(
+    [code] => 1
+    [descr] => Успешно обработано
+    [datetime] => 2015-08-07 01:31:46
+    [action] => send
+    [allRecivers] => 1
+    [colSendAbonent] => 1
+    [colNonSendAbonent] => 0
+    [priceOfSending] => 2.94
+    [colsmsOfSending] => 2
+    [price] => 
+    [smsid] => 5h3w5n4yfvg73zblnkvm9b4g9nyen0
+)
+
+2015-08-07 02:34:38	Array
+(
+    [code] => 1
+    [descr] => Успешно обработано
+    [datetime] => 2015-08-07 01:34:39
+    [action] => send
+    [allRecivers] => 1
+    [colSendAbonent] => 1
+    [colNonSendAbonent] => 0
+    [priceOfSending] => 2.94
+    [colsmsOfSending] => 2
+    [price] => 
+    [smsid] => wf0ove6lrpu819f4jkg
+)
+
+2015-08-07 02:35:47	Array
+(
+    [code] => 1
+    [descr] => Успешно обработано
+    [datetime] => 2015-08-07 01:35:47
+    [action] => send
+    [allRecivers] => 1
+    [colSendAbonent] => 1
+    [colNonSendAbonent] => 0
+    [priceOfSending] => 2.94
+    [colsmsOfSending] => 2
+    [price] => 
+    [smsid] => 0h2ma512d84dctxn
+)
+
+2015-08-07 12:28:57	Array
+(
+    [code] => 1
+    [descr] => Успешно обработано
+    [datetime] => 2015-08-07 11:28:59
+    [action] => send
+    [allRecivers] => 1
+    [colSendAbonent] => 1
+    [colNonSendAbonent] => 0
+    [priceOfSending] => 4.41
+    [colsmsOfSending] => 3
+    [price] => 
+    [smsid] => qfqofavo5cgp6pacn90u
+)
+
+2015-08-07 12:28:58	Array
+(
+    [code] => 1
+    [descr] => Успешно обработано
+    [datetime] => 2015-08-07 11:29:00
+    [action] => send
+    [allRecivers] => 1
+    [colSendAbonent] => 1
+    [colNonSendAbonent] => 0
+    [priceOfSending] => 4.41
+    [colsmsOfSending] => 3
+    [price] => 
+    [smsid] => y5y1gq7zgxqubxx
+)
+
+2015-08-07 12:46:16	Array
+(
+    [code] => 1
+    [descr] => Успешно обработано
+    [datetime] => 2015-08-07 11:46:18
+    [action] => send
+    [allRecivers] => 1
+    [colSendAbonent] => 1
+    [colNonSendAbonent] => 0
+    [priceOfSending] => 4.41
+    [colsmsOfSending] => 3
+    [price] => 
+    [smsid] => w4um2ca4ul7t5mo3e9tvrsttrx
+)
+
+2015-08-07 12:46:17	Array
+(
+    [code] => 1
+    [descr] => Успешно обработано
+    [datetime] => 2015-08-07 11:46:19
+    [action] => send
+    [allRecivers] => 1
+    [colSendAbonent] => 1
+    [colNonSendAbonent] => 0
+    [priceOfSending] => 4.41
+    [colsmsOfSending] => 3
+    [price] => 
+    [smsid] => 5n729v5vmdc8mshds
+)
+

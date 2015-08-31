@@ -1,0 +1,72 @@
+<p>
+ <span id='status0'>Status</span>
+<p>
+
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=c colspan=2><h3><en>View mode</en><ru>Режим отображения</ru></h3></td>
+ </tr>
+ 
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l id="r_viewmode">
+   <frb objects  r_viewmode><en>Objects</en><ru>Объекты (собственники)</ru></frb>
+   <frb customers 1 r_viewmode><en>Customers</en><ru>Покупатели</ru></frb>
+  </td>
+ </tr>
+</table>
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=17%><col width=66%><col width=17%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+      
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td class=l id=result>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_saveandclose"  value="<en>Save and close</en><ru>Сохранить и закрыть</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"       value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"          value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"     value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"        value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"        value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"         value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+

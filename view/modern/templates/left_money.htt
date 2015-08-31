@@ -1,0 +1,173 @@
+<block_balance>
+ Баланс: %balance% руб.
+</block_balance>
+
+<p>
+ <span id='status0'>Status</span>
+<p>
+
+<div class="clrln hidden">
+ <table class=editor id=leftfilters>
+  <tr>
+   <td class=l colspan=2><h3><en>Balance load</en><ru>Загрузка баланса</ru></h3></td>
+  </tr>
+  <tr>
+   <td colspan=2 class=l>
+    <p>
+     <form id='uploadform' name='uploadform' target='uploadbuffer' enctype='multipart/form-data' method='post' action='index.php'>
+      <input type=hidden id="id"     name="id"     value="%ID%">
+      <input type=hidden id="action" name="action" value="balance">
+      <input type=file class=combtn_grey name='fileupload' id='fileupload' onchange='doupload();'>
+     </form>
+     <iframe name='uploadbuffer' id='uploadbuffer' onload='uploaded(this.id);'></iframe>
+    </p>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div class=clrln id='settings_pl'>
+ <table class=editor id=leftfilters>
+  <tr>
+   <td class=l colspan=2><h3><en>Filter</en><ru>Фильтр</ru></h3></td>
+  </tr>
+  <tr>
+   <td class=r>
+    <ru>Тип записи</ru><en>Record type</en>:
+   </td>
+   <td>
+    <select class=filteritem id=s_typeid>
+     <option id="0"><ru>Все типы</ru><en>All types</en></option>
+     <loop_typeids>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_typeids>
+    </select>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <ru>Группа</ru><en>Group</en>:
+   </td>
+   <td>
+    <select class=filteritem id=s_groupid>
+     <option id="0"><ru>Все группы</ru><en>All groups</en></option>
+     <loop_groupids>
+      <option id="%ID%" %selected%>%Description%</option>
+     </loop_groupids>
+    </select>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class=r>
+    <ru>Месяц</ru><en>Month</en>:
+   </td>
+   <td>
+    <select class=filteritem id=s_month>
+     <option id="0"><ru>Все</ru><en>All</en></option>
+     <loop_months>
+      <option id="%Year%-%Month%" %selected%>%Year%-%Month%</option>
+     </loop_months>
+    </select>
+   </td>
+  </tr>
+  <tr class="hidden">
+   <td class=l colspan=2 id=r_viewmode>
+    <p>
+     <ru>Режим просмотра</ru>
+     <en>View mode</en>
+    </p>
+    <p>
+     <frb current 1 r_viewmode><ru>Обычный</ru><en>Default</en></frb>
+     <frb all  r_viewmode><ru>Все</ru><en>All</en></frb>
+     <frb week  r_viewmode><ru>Отчёт за неделю</ru><en>Weekly report</en></frb>
+     <frb month  r_viewmode><ru>Отчёт за месяц</ru><en>Monthly report</en></frb>
+     <frb year  r_viewmode><ru>Отчёт за год</ru><en>Yearly report</en></frb>
+     <frb full  r_viewmode><ru>Полный отчёт</ru><en>Full report</en></frb>
+     <frb monthly  r_viewmode><ru>Отчёт по месяцам</ru><en>Report by months</en></frb>
+     <comctl all  download drive-download.png><ru>Скачать</ru><en>Download</en></comctl>
+    </p>
+   </td>
+  </tr>
+  <!--
+  <tr>
+   <td class=r><en>Data starts at row</en><ru>Данные начинаются с ряда №</ru></td><td class=l><input id='settings_pl_startrow' value='%settings_pl_startrow_defvalue%'></td>
+  </tr>
+  <tr>
+   <td class=c colspan=2><h3><input type=button onclick='processxls();'id='apply' class='gcbtn' value='<en>Apply (Process file again)</en><ru>Применить (Обработать файл ещё раз)</ru>'></h3></td>
+  </tr>
+  <tr>
+   <td class=c colspan=2><h3><input type=button onclick='cleardatabase();' id='clear' class='gcbtn' value='<en>Clear database</en><ru>Очистить базу данных</ru>'></h3></td>
+  </tr>
+  -->
+ </table>
+</div>
+
+<p>
+ <input type=button onclick='showcache();'  value='Show cache' class='hidden'>
+</p>
+
+
+<hr>
+
+<table class=editor id=leftfilters>
+ <tr>
+  <td class=r>
+  </td>
+  <td class=l>
+   <comctl -1  newMoney plus.png><ru>Добавить запись</ru><en>Add new record</en></comctl>
+  </td>
+ </tr>
+</table>
+
+
+<div id="popupdefault"       class=hidden>
+ <table class=editorcontainer>
+  <col width=20%><col width=60%><col width=20%>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <div class=c>
+     <div class=popupheader>
+      <div class=floatl><en>Izum Editor Window</en><ru>Редактор</ru>
+       <span id='caption_newcard'><en> - new item</en><ru> - новая карточка</ru></span>
+      </div>
+      <div class=floatr><a href="javascript:hidepopup();"><img src='%viewroot%/img/cross.png'></a></div>
+      <div class=clrln01></div>&nbsp;
+     </div>
+     <div class=ch id=popupcanvas>
+      
+     </div><br>
+     
+     <table class=popupbottombuttons>
+      <tr>
+       <td>
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_process"    value="<en>Take care</en><ru>Обработать</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_save"       value="<en>Save</en><ru>Сохранить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_completed"  value="<en>Sold</en><ru>Продано</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_denied"     value="<en>Denied</en><ru>Отказ</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_delete"     value="<en>Delete</en><ru>Удалить</ru>">
+        <input type=button class=button onclick="popupBtnClick(this.id);" id="popup_btn_close"      value="<en>Close</en><ru>Закрыть</ru>">
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </table>
+</div>
+
+
+

@@ -1,0 +1,55 @@
+<block_no>
+ <en>No</en><ru>Нет</ru>
+</block_no>
+
+<block_norows>
+ <table class="tableview">
+  <tr class="row1" id="tableheader">
+   <th><en>No data</en><ru>Нет данных</ru></th>
+  </tr>
+ </table>
+</block_norows>
+
+<block_dir0><img src="%imgfolder%/arrow-180.png" title="<en>Outgoing</en><ru>Исходящий</ru>"></block_dir0>
+<block_dir1><img src="%imgfolder%/arrow.png"     title="<en>Incoming</en><ru>Входящий</ru>"></block_dir1>
+
+<loop_table>
+ <table class=tableview>
+  <tr class=row1 id=tableheader>
+   <th>ID</th>
+   <th><en>Date</en><ru>Дата</ru></th>
+   <th><en>Phone</en><ru>Телефон</ru></th>
+   <!--<th><en>HouseType</en><ru>Планировки</ru></th>-->
+   <th><en>Market</en><ru>Рынок</ru></th>
+   <th><en>Rooms</en><ru>Комнат</ru></th>
+   <th><en>District</en><ru>Районы</ru></th>
+   <th><en>House type</en><ru>Типы планировок</ru></th>
+   <th><en>MaxCost</en><ru>Макс. цена</ru></th>
+   <th><en>User</en><ru>Менеджер</ru></th>
+   <th colspan=3><en>Tools</en><ru>Инструменты</ru></th>
+  </tr>
+  <loop_table_row>
+   <tr class="row%c% row">
+    <td id='ID_%ID%'>%ID%</td>
+    <td>%Date%</td>
+    <td>%calldiretion%&nbsp;%Phone%</td>
+    <!--<td>%HouseTypes%</td>-->
+    <td>%Market%</td>
+    <td>%DesiredRooms%</td>
+    <td>%Districts%</td>
+    <td>%HouseTypes%</td>
+    <td>%MaxCost%</td>
+    <td>%Firstname% %Surname%</td>
+    <td>
+     <comctl %id%  editCustomer pencil.png><ru>Правка</ru><en>Edit</en></comctl>
+    </td>
+    <block_adminonly>
+     <td>
+      <comctl %id%  deleteCustomer cross-script.png><ru>Удалить</ru><en>Delete</en></comctl>
+     </td>
+    </block_adminonly>
+   </tr>
+  </loop_table_row>
+ </table>
+</loop_table>
+

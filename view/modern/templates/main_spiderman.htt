@@ -1,0 +1,35 @@
+<loop_item>
+ <table>
+  <tr class=spiderman>
+   <td>
+    <table>
+     <tr>
+      <td>%ID% <span id='ParentID_%ID%'>%ParentID%</span> <b><span id='Name_%ID%'>%Name%</span></b></td>
+      <td><span id='Phone_%ID%'>%Phone%</span></td>
+      <td><span id='Email_%ID%'>%Email%</span></td>
+      <td>
+       <comctl %ID%  collapseSpider toggle.png><ru>Свернуть</ru><en>Collapse</en></comctl>
+      </td>
+      <td>
+       <comctl %ID%  expandSpider toggle-expand.png><ru>Развернуть</ru><en>Expand</en></comctl>
+      </td>
+      <td>
+       <comctl %ID%  editSpider pencil.png><ru>Править</ru><en>Edit</en></comctl>
+      </td>
+      <td>
+       <comctl %ID%  deleteSpider cross-script.png><ru>Удалить</ru><en>Delete</en></comctl>
+      </td>
+      <td><b><span id='NextCall_%ID%'>%NextCall%</span> <span id='Place_%ID%'>%Place%</span></b></td>
+      <td><span id='Comment_%ID%'>%Comment%</span></td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+  <tr>
+   <td class=children id=children_%ID% colspan=7>
+    Children_%ID%_
+   </td>
+  </tr>
+ </table>
+</loop_item>
+

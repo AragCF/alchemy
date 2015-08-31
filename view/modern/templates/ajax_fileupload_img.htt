@@ -1,0 +1,4 @@
+<div class="uploadedImg">
+ <div class="picview"><a href="%href%" target="_blank"><img id='uploadedimg' src='%filename%'>%fname%</a></div>
+ <a href="javascript:;" onclick="deleteAttachment('%filename_real%', '%action%');"><img src="%imgfolder%/cross-script.png"> Удалить этот файл</a>
+</div>

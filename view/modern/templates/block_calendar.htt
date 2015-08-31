@@ -1,0 +1,1 @@
+<input id="%id%" type="text" value="%caption%" class="%param1% calendar" onkeyup='cinput_keyup(this.id, event);'>

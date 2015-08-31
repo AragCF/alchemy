@@ -1,0 +1,165 @@
+<h2>%caption%</h2>
+
+<table class="tbl_dashboard">
+ <tr>
+  <th colspan=2></th>
+  <th>Всего</th>
+  <th>На сегодня</th>
+  <th>На вчера</th>
+  <th>На начало этой недели</th>
+  <th>На начало предыдущей недели</th>
+  <th>На начало этого месяца</th>
+  <th>На начало предыдущего месяца</th>
+ </tr>
+ 
+ <tr class="bt">
+  <td rowspan=2>Менеджеров</td>
+  <td>факт</td>
+  <td>%users_total%</td>
+  <td>%users_today%</td>
+  <td>%users_yesterday%</td>
+  <td>%users_thisweek%</td>
+  <td>%users_prevweek%</td>
+  <td>%users_thismonth%</td>
+  <td>%users_prevmonth%</td>
+ </tr>
+ <tr>
+  <td class=hidden>план</td>
+ </tr>
+ 
+ <tr class="bt">
+  <th colspan=2></th>
+  <th>Всего</th>
+  <th>Новых за сегодня</th>
+  <th>Новых за вчера</th>
+  <th>Новых за эту неделю</th>
+  <th>Новых за предыдущую неделю</th>
+  <th>Новых за этот месяц</th>
+  <th>Новых за прошлый месяц</th>
+ </tr>
+ 
+ <tr class="bt">
+  <td rowspan=2>Собственников в базе</td>
+  <td>факт</td>
+  <td>%objects_total%</td>
+  <td>%objects_today%</td>
+  <td>%objects_yesterday%</td>
+  <td>%objects_thisweek%</td>
+  <td>%objects_prevweek%</td>
+  <td>%objects_thismonth%</td>
+  <td>%objects_prevmonth%</td>
+ </tr>
+ <tr>
+  <td>план</td>
+  <td>%objects_total_plan%</td>
+  <td>%objects_today_plan%</td>
+  <td>%objects_yesterday_plan%</td>
+  <td>%objects_thisweek_plan%</td>
+  <td>%objects_prevweek_plan%</td>
+  <td>%objects_thismonth_plan%</td>
+  <td>%objects_prevmonth_plan%</td>
+ </tr>
+ 
+ <tr class="bt">
+  <td rowspan=2>Покупателей в базе</td>
+  <td>факт</td>
+  <td>%customers_total%</td>
+  <td>%customers_today%</td>
+  <td>%customers_yesterday%</td>
+  <td>%customers_thisweek%</td>
+  <td>%customers_prevweek%</td>
+  <td>%customers_thismonth%</td>
+  <td>%customers_prevmonth%</td>
+ </tr>
+ <tr>
+  <td>план</td>
+  <td>%customers_total_plan%</td>
+  <td>%customers_today_plan%</td>
+  <td>%customers_yesterday_plan%</td>
+  <td>%customers_thisweek_plan%</td>
+  <td>%customers_prevweek_plan%</td>
+  <td>%customers_thismonth_plan%</td>
+  <td>%customers_prevmonth_plan%</td>
+ </tr>
+ 
+ <tr class="bt">
+  <td rowspan=2>Договоров</td>
+  <td>факт</td>
+  <td>%agreements_total%</td>
+  <td>%agreements_today%</td>
+  <td>%agreements_yesterday%</td>
+  <td>%agreements_thisweek%</td>
+  <td>%agreements_prevweek%</td>
+  <td>%agreements_thismonth%</td>
+  <td>%agreements_prevmonth%</td>
+ </tr>
+ <tr>
+  <td>план</td>
+  <td>%agreements_total_plan%</td>
+  <td>%agreements_today_plan%</td>
+  <td>%agreements_yesterday_plan%</td>
+  <td>%agreements_thisweek_plan%</td>
+  <td>%agreements_prevweek_plan%</td>
+  <td>%agreements_thismonth_plan%</td>
+  <td>%agreements_prevmonth_plan%</td>
+ </tr>
+ 
+ <tr class="bt">
+  <td rowspan=2>Задатков</td>
+  <td>факт</td>
+  <td>%deposits_total%</td>
+  <td>%deposits_today%</td>
+  <td>%deposits_yesterday%</td>
+  <td>%deposits_thisweek%</td>
+  <td>%deposits_prevweek%</td>
+  <td>%deposits_thismonth%</td>
+  <td>%deposits_prevmonth%</td>
+ </tr>
+ <tr>
+  <td>план</td>
+  <td>%deposits_total_plan%</td>
+  <td>%deposits_today_plan%</td>
+  <td>%deposits_yesterday_plan%</td>
+  <td>%deposits_thisweek_plan%</td>
+  <td>%deposits_prevweek_plan%</td>
+  <td>%deposits_thismonth_plan%</td>
+  <td>%deposits_prevmonth_plan%</td>
+ </tr>
+ 
+ <tr class="bt">
+  <td rowspan=2>Сделок</td>
+  <td>факт</td>
+  <td>%handshakes_total%</td>
+  <td>%handshakes_today%</td>
+  <td>%handshakes_yesterday%</td>
+  <td>%handshakes_thisweek%</td>
+  <td>%handshakes_prevweek%</td>
+  <td>%handshakes_thismonth%</td>
+  <td>%handshakes_prevmonth%</td>
+ </tr>
+ <tr>
+  <td>план</td>
+  <td>%handshakes_total_plan%</td>
+  <td>%handshakes_today_plan%</td>
+  <td>%handshakes_yesterday_plan%</td>
+  <td>%handshakes_thisweek_plan%</td>
+  <td>%handshakes_prevweek_plan%</td>
+  <td>%handshakes_thismonth_plan%</td>
+  <td>%handshakes_prevmonth_plan%</td>
+ </tr>
+ 
+ <tr class="bt">
+  <td colspan=9>&nbsp;</td>
+ </tr>
+</table>
+
+<table class="tbl_dashboard">
+ <tr>
+  <td>
+   <div id="gauge1"></div>
+   <div id="gauge1_v" class="hidden">%handshakes_prevweek%</div>
+   <div id="gauge1_max" class="hidden">%handshakes_prevweek_plan%</div>
+   <div id="gauge1_title" class="hidden">Сделок за пред. неделю</div>
+  </td>
+ </tr>
+</table>

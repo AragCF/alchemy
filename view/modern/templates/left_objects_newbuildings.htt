@@ -1,0 +1,388 @@
+<input type=hidden size=5 value="%ID%" id="SubID">
+<table class="groupborder">
+ <tr class=vtop>
+  <td class=vtop>
+   <div class="groupcontainer">
+    <table class="objectdetails">
+     <tr class=objectdetails>
+      <td class=fieldvalue colspan=11>
+       <div class=groupheader><ru>Характеристики дома</ru><en>House information</en></div>
+      </td>
+     </tr>
+     <tr class=objectdetails id=width1>
+      <td class=r>
+       <b>Этажей:</b>
+      </td>
+      <td class=l>
+       <p><input type=text size=5 value="%Floors%" id="Floors"></p>
+      </td>
+      
+      <td class=r>
+       <b>Подъездов:</b>
+      </td>
+      <td class=l>
+       <p><input type=text size=5 value="%Entrances%" id="Entrances"></p>
+      </td>
+      
+      <td class=r>
+       <b>Кол-во квартир:</b>
+      </td>
+      <td class=l>
+       <p><input type=text size=5 value="%Apartments%" id="Apartments"></p>
+      </td>
+      <td class=r>
+       <b>Кол-во лифтов:</b>
+      </td>
+      <td class=l>
+       <p><input type=text size=5 value="%Elevators%" id="Elevators"></p>
+      </td>
+      
+      <td class=r>
+       <b><en>Completion date</en><ru>Срок сдачи</ru>:</b>
+      </td>
+      <td class=l>
+       <select class="filteritem" id="CompletionDateQuarter">
+        <loop_quarters>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_quarters>
+       </select>
+       кв.
+       <select class="filteritem" id="CompletionDateYear">
+        <loop_years>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_years>
+       </select>
+       года.
+      </td>
+      
+     </tr>
+    </table>
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldvalue>
+       <p>
+        <fcb Security %Security%><en>Security</en><ru>Охрана</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Concierge %Concierge%><en>Concierge</en><ru>Консъерж</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb OperationService %OperationService%><en>OperationService</en><ru>Эксплуатационная служба</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Chute %Chute%><en>Chute</en><ru>Мусоропровод</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Gas %Gas%><en>Gas</en><ru>Газ</ru></fcb>
+       </p>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <fcb Parking %Parking%><en>Parking</en><ru>Парковка</ru></fcb>
+       </p>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr class=vtop>
+  <td class=vtop>
+   <div class="groupcontainer" id="newbuildings_decoration">
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldname colspan=8>
+       <div class=groupheader><ru>Ремонт и отделка</ru><en>Decoration</en></div>
+      </td>
+     </tr>
+     
+     <tr class=objectdetails>
+      <td class=r>
+       <b>Отделка:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="FinishingID">
+         <loop_finishings>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_finishings>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Пол:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="FloorSurfaceID">
+         <loop_floorsurfaces>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_floorsurfaces>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Плита:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="StoveTypeID">
+         <loop_stovetypes>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_stovetypes>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Двери:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="DoorsTypeID">
+         <loop_doorstypes>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_doorstypes>
+        </select>
+       </p>
+      </td>
+     </tr>
+     
+     <tr>
+      <td class=r>
+       <b>Стены:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="WallsSurfaceID">
+         <loop_wallssurfaces>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_wallssurfaces>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Материал стен:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="WallsMaterialID">
+         <loop_wallsmaterials>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_wallsmaterials>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Сантехника:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="BathroomEquipmentID">
+         <loop_bathroomequipments>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_bathroomequipments>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b>Окна:</b>
+      </td>
+      <td class=l>
+       <p>
+        <select id="WindowsTypeID">
+         <loop_windowstypes>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_windowstypes>
+        </select>
+       </p>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ 
+ <tr class=vtop>
+  <td class=vtop>
+   <div class="groupcontainer">
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldname>
+       <div class=groupheader><ru>Квартиры</ru><en>Apartments</en></div>
+      </td>
+     </tr>
+     <tr>
+      <td class=groupheader>
+       <div class=newbuildings_subitems_container id=newbuildings_subitems_container>
+        <table id=popupdefault>
+         <tr>
+          <td><img src='%imgfolder%/progress.gif'></td>
+          <td><ru>Загрузка...</ru><en>Loading...</en></td>
+         </tr>
+        </table>
+        
+        <loop_table>
+         <block_no><ru>Нет</ru><en>No</en></block_no>
+         <block_norows>
+          <td colspan=3>
+           <en>No data</en>
+           <ru>Нет данных</ru>
+          </td>
+         </block_norows>
+         
+         <table class="tableview_n">
+          <tr id="tableheader_n">
+           <th title="Комнат">Ком.</th>
+           <th title="Изолированных помещений">Изол.</th>
+           <th title="Площадь общая">Sобщ</th>
+           <th title="Площадь жилая">Sжил</th>
+           <th title="Площадь кухни">Sкух</th>
+           <th title="Этажи">Этажи</th>
+           <th title="Кол-во уровней">Уров.</th>
+           <th title="Кол-во санузлов">Сан.</th>
+           <th title="Кол-во балконов">Балк.</th>
+           <th title="Кол-во лоджий">Лодж.</th>
+           <th title="Кол-во предложений">Предл.</th>
+           <th title="Высота потолка">Пот.</th>
+           <th title="Подъезд">Под.</th>
+           <th title="Цена за квартиру">Цена</th>
+           <th title="Цена за квадратный метр">Цена м<sup>2</sup></th>
+           <th></th>
+          </tr>
+          <loop_table_row>
+           <tr class="row%c%" id="%ID%">
+            <td>
+             <input type="text" class="nbs_editor" id="RoomsTotal_%ID%"    value="%RoomsTotal%"    onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','RoomsTotal','%ID%',this.value);">
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="RoomsIsolated_%ID%" value="%RoomsIsolated%" onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','RoomsIsolated','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="SpaceTotal_%ID%"    value="%SpaceTotal%"    onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','SpaceTotal','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="SpaceLiving_%ID%"   value="%SpaceLiving%"   onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','SpaceLiving','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="SpaceKitchen_%ID%"  value="%SpaceKitchen%"  onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','SpaceKitchen','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="Floor_%ID%"         value="%Floor%"         onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','Floor','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="Layers_%ID%"        value="%Layers%"        onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','Layers','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="Toilets_%ID%"       value="%Toilets%"       onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','Toilets','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="Balconies_%ID%"     value="%Balconies%"     onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','Balconies','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="Loggias_%ID%"       value="%Loggias%"       onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','Loggias','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="Proposals_%ID%"     value="%Proposals%"     onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','Proposals','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="CeilingHeight_%ID%" value="%CeilingHeight%" onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','CeilingHeight','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor" id="Entrance_%ID%"      value="%Entrance%"      onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','Entrance','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor CostTotal" id="CostTotal_%ID%" value="%CostTotal%" onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','CostTotal','%ID%',this.value);"/>
+            </td>
+            <td>
+             <input type="text" class="nbs_editor CostPerMeter" id="CostPerMeter_%ID%" value="%CostPerMeter%" onclick="input_click(this.id);" onblur="savefield('newbuildings_subitems','CostPerMeter','%ID%',this.value);"/>
+            </td>
+            <td>
+            <comctl %ID%  deleteNBSubitem cross-script.png><ru>Удалить</ru><en>Delete</en></comctl>
+            </td>
+           </tr>
+          </loop_table_row>
+         </table>
+        </loop_table>
+       </div>
+       <comctl %ID%  addNBSubitem table-insert-row.png><ru>Добавить</ru><en>Add new</en></comctl>
+       <div id='results'></div>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr class=vtop>
+  <td class=vtop colspan=3>
+   <div class="groupcontainer">
+    <table class=objectdetails>
+     <tr class=objectdetails>
+      <td class=fieldname colspan=6>
+       <div class=groupheader><ru>Дополнительная информация</ru><en>Additional information</en></div>
+      </td>  
+     </tr>
+     <tr class=objectdetails>
+      <td class=r>
+       <b>Источник права:</b>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <select id="RightsSourceID">
+         <loop_rightssources>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_rightssources>
+        </select>
+       </p>
+      </td>
+      
+      <td class=r>
+       <b><ru>Форма передачи права</ru><en>Form of transmission of right</en>:</b>
+      </td>
+      <td class=fieldvalue>
+       <p>
+        <select id="RightsTransmissionID">
+         <loop_rightstransmissions>
+          <option id="%ID%" %selected%>%Description%</option>
+         </loop_rightstransmissions>
+        </select>
+       </p>
+      </td>
+     </tr>
+     <tr>
+      <td class=r>
+       <b><en>Residential complex name</en><ru>Наименование ЖК</ru>:</b>
+      </td>
+      <td class=l>
+       <cinputs ResidentialComplexName>%ResidentialComplexName%</cinputs>
+      </td>
+      
+      <td class=r>
+       <b><en>Developer</en><ru>Застройщик</ru>:</b>
+      </td>
+      <td class=l>
+       <cinputs Developer>%Developer%</cinputs>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ 
+</table>
+
+
+

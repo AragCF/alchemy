@@ -1,0 +1,273 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ru" />
+  <title>Алхиметр - %go%</title>
+  <link rel="stylesheet" type="text/css" href="file.php?name=%viewroot%/styles/admin.css"/>
+  <link rel="stylesheet" type="text/css" href="file.php?name=%viewroot%/styles/dhtmlxca.css"/>
+  
+  <script type="text/javascript" src="file.php?name=controller/js/ajax2.js"></script>
+  <script type="text/javascript" src="file.php?name=controller/js/common.js"></script>
+  <script type="text/javascript" src="controller/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="controller/js/jquery.maskedinput.min.js"></script>
+  <script type="text/javascript" src="controller/js/dhtmlxca.js"></script>
+  <script type="text/javascript" src="controller/js/json.js"></script>
+  <script type="text/javascript" src="controller/js/md5.js"></script>
+  <!--
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,400italic,700,300italic,700italic&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+  -->
+  
+  <meta http-equiv="Content-Language" content="ru"/>
+  <link rel="SHORTCUT ICON" href="%imgfolder%/favicon.ico"/>
+ </head>
+ <body lang="ru" id='body' onload="load(0);" onresize="resize(0);">
+  <div class="hidden" id="confirmhidepopup">
+   <ru>Действительно закрыть редактор?</ru><en>Really close this editor?</en>
+  </div>
+  <div class="hidden" id="confirmrecorddelete">
+   <ru>Подтверждаете удаление записи?</ru><en>Really delete this record?</en>
+  </div>
+  <div class="hidden" id="confirmlowcost">
+   <ru>Введена цена менее 300 000 руб. Вы уверены, что цена введна правильно?</ru><en>Cost input is less than 300 000 rub. Really proceed with this cost?</en>
+  </div>
+  
+  
+  <loop_globalparent>
+   <div class=hidden>
+    <table id=popupdefault_tbl>
+     <tr id=popupdefault_tr>
+      <td><img src='%imgfolder%/progress.gif'></td>
+      <td><ru>Загрузка...</ru><en>Loading...</en></td>
+     </tr>
+    </table>
+   </div>
+   <div id="popupeditorbkg"     class="hidden"></div>
+   <div id="popupeditor"        class="hidden"></div>
+   
+   <div class=hidden id=hint_template>
+    <table width=100%>
+     <tr>
+      <td>
+       <en>Hint</en>
+       <ru>Подсказка</ru>
+      </td>
+      <td class=r>
+       <a href='javascript:;' onclick='hideHint(%hint_id%)';><img src='%imgfolder%/cross.png'></a>
+      </td>
+     </tr>
+    </table>
+     %hint_content%
+   </div>
+   
+   <div class=hidden id=error404>
+    <en>Data not found, upload price-list first.</en>
+    <ru>Данные не найдены, загрузите прайс-лист.</ru>
+   </div>
+   
+   <div class=hidden id=uploading>
+    <en>Uploading...</en>
+    <ru>Загрузка...</ru>
+   </div>
+   
+   <div class=hidden id=loading>
+    <img src="%imgfolder%/ajax-loader-admin.gif">
+    
+    <en>Loading data...</en>
+    <ru>Загрузка данных...</ru>
+   </div>
+   
+   <div class=hidden id=ready>
+    <en>Ready</en>
+    <ru>Готово</ru>
+   </div>
+   
+   <div class=hidden id=count>
+    <en>Records: </en>
+    <ru>Записей: </ru>
+   </div>
+   
+   <div class=hidden id=processing>
+    <en>Processing xls...</en>
+    <ru>Обработка файла...</ru>
+   </div>
+   
+   <div class=hidden id=cleardatabase>
+    <en>Database cleared</en>
+    <ru>База данных очищена</ru>
+   </div>
+   
+   <block_link>
+    <a href="%href%"><en>Download</en><ru>Скачать</ru></a>
+   </block_link>
+   
+   <table class=inner_table>
+    <tr>
+     <td class=leftcolumn>
+      <div class=leftcolumn id=leftcolumn>
+       <div class=floatl>
+        <h2><ru>Алхиметр</ru><en>Furniture Alchemy</en></h2>
+        
+        <div id=lang>
+         <ru>
+          <a href="?lang=en" class="lang" title="Switch to english"><img src="%imgfolder%/flag_england.gif" alt="Switch to english"> Switch to english</a>
+         </ru>
+         <en>
+          <a href="?lang=ru" class="lang" title="Переключиться на русский язык"><img src="%imgfolder%/flag_russia.gif" alt="Переключиться на русский язык"> Переключиться на русский язык</a>
+         </en>
+        </div>
+       </div>
+       <!--
+       <ccb 0  CompactView>Compact view</ccb>
+       -->
+       
+       <loop_user_auth>
+        <table class=loop_user_auth>
+         <tr>
+          <td>
+           <div class=user_auth>
+            <img src="%imgfolder%/logo_lo.gif" alt="Алхиметр Logo">
+            <h3><ru>Алхиметр</ru><en>Furniture Alchemy</en></h3>
+            <div class=hidden_ id=authwnd>
+             <form method='post' action='javascript:;' onsubmit='dosubmit(1);'>
+              <table class=authfrm>
+               <col width=45%>
+               <col>
+               <tr>
+                <td class=r><p><ru>Имя пользователя</ru><en>Username</en>:</p></td>
+               </tr>
+               <tr>
+                <td class=l><input type=text     class=authinput id=username name=username></td>
+               </tr>
+               <tr>
+                <td class=r><p><ru>Пароль</ru><en>Password</en>:</p></td>
+               </tr>
+               <tr>
+                <td class=l><input type=password class=authinput id=password name=password></td>
+               </tr>
+               <tr>
+                <td class=l>
+                 <input type=submit value='<ru>Войти</ru><en>Login</en>' id='btn_login'>
+               <tr>
+                <td class=r colspan=2 id=loginresult>
+                </td>
+               </tr>
+              </table>
+             </form>
+            </div>
+            <div class=hidden id=authorizing>
+             <table id=popupsmall>
+              <tr id=popupsmall_tr>
+               <td><img src='%imgfolder%/ajax-loader.gif'></td>
+               <td>
+                <en>Authorizing...</en><ru>Авторизация...</ru>
+               </td>
+              </tr>
+             </table>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </table>
+       </loop_user_auth>
+       
+       <loop_user_info>
+        <div class="floatl">
+         <ru>Пользователь</ru><en>User</en>: %username% (%Title%)
+         <a href='javascript:;' id='abtn3' onclick='dologout();'><ru>Выход</ru><en>Logout</en></a>
+        </div>
+       </loop_user_info>
+       
+       <div id="userStatus" class=hidden>
+        Loading...
+        <block_status_1>
+         <table class=hidden>
+          <tr>
+           <td colspan=2>
+            <div><ru>Статус</ru><en>Status</en>: <img src="%imgfolder%/briefcase.png"> <b><ru>Вне офиса</ru><en>Outside the office</en></b></div>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <ru>Сменить статус</ru><en>Change status</en>:
+           </td>
+           <td>
+            <comctl 2  setUserStatus building.png><ru>В офисе</ru><en>At the office</en></comctl>
+           </td>
+          </tr>
+         </table>
+        </block_status_1>
+        <block_status_2>
+         <table>
+          <tr>
+           <td colspan=2>
+            <div>Статус: <img src="%imgfolder%/building.png"> <b><ru>В офисе</ru><en>At the office</en></b></div>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <ru>Сменить статус</ru><en>Change status</en>:
+           </td>
+           <td>
+            <comctl 1  setUserStatus briefcase.png><ru>Вне офиса</ru><en>Outside the office</en></comctl>
+           </td>
+          </tr>
+         </table>
+        </block_status_2>
+       </div>
+       <div class=clrln></div>
+       
+       <hr>
+       
+       <block_link_dashboard>
+        <comhref go %go% dashboard dashboard.png><ru>Показатели</ru><en>Dashboard</en></comhref>
+       </block_link_dashboard>
+       <block_link_news>
+        <comhref go %go% news newspaper.png><ru>Новости</ru><en>News</en></comhref>
+       </block_link_news>
+       <block_link_events>
+        <comhref go %go% events application-list.png><ru>События</ru><en>Events</en></comhref>
+       </block_link_events>
+       <block_link_users>
+        <comhref go %go% users users.png><ru>Пользователи</ru><en>Users</en></comhref>
+       </block_link_users>
+       <block_link_projects>
+        <comhref go %go% projects folders.png><ru>Заказы (Проекты)</ru><en>Orders (Projects)</en></comhref>
+       </block_link_projects>
+       <block_link_tasks>
+        <comhref go %go% tasks task.png><ru>Задачи</ru><en>Tasks</en></comhref>
+       </block_link_tasks>
+       <block_link_calendar>
+        <comhref go %go% calendar calendar.png><ru>Календарь</ru><en>Calendar</en></comhref>
+       </block_link_calendar>
+       <block_link_money>
+        <comhref go %go% money moneys.png><ru>Бухгалтерия</ru><en>Finances</en></comhref>
+       </block_link_money>
+       <block_link_system>
+        <comhref go %go% system wrench-screwdriver.png><ru>Сервис</ru><en>Service</en></comhref>
+       </block_link_system>
+       
+       <hr>
+       
+       %leftcontent%
+      </div>
+      
+     </td>
+     <td id=test>
+      <div id=xlspreview>
+       %maincontent%
+      </div>
+     </td>
+    </tr>
+   </table>
+  </loop_globalparent>
+  
+  
+  <script language="javascript">
+   go = '%go%';
+   id = '%id%';
+//   alert (go);
+  // NumEvents = %numevents%;
+  </script>
+  
+ </body>
+</html>

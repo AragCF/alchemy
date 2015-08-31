@@ -1,0 +1,33 @@
+<block_no>
+ Нет номера заказа
+</block_no>
+
+<block_norows>
+</block_norows>
+
+<loop_table>
+ <loop_table_row>
+  <a href="javascript:;" id="%ID%" onclick="btn_click(this.id,'editProject');" title="Правка" class="brick">
+   <table class=row>
+    <tr>
+     <td>
+      %OrderNumber%
+     </td>
+    </tr>
+   </table>
+  </a>
+ </loop_table_row>
+</loop_table>
+
+<strict_CreateProject_2>
+ <a href="javascript:;" id="-1" onclick="btn_click(this.id,'newProject');" title="Добавить заказ" class="brick">
+  <table class="row">
+   <tr>
+    <td>
+     <img src="%imgfolder%/plus.png">
+     <ru>Добавить заказ</ru><en>Add new order</en>
+    </td>
+   </tr>
+  </table>
+ </a>
+</strict_CreateProject_2>

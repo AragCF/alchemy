@@ -1,0 +1,246 @@
+
+<table class=editor>
+ <tr>
+  <td>
+   <table>
+    <col width="200"><col width="250"><col width="200"><col width="200">
+    <tr class=hidden>
+    </tr>
+    <tr class="hidden">
+     <td class=r>
+      <b>ID:</b>
+     </td>
+     <td class=l>
+      <cinputs ID>%ID%</cinputs>
+     </td>
+     <td class=r>
+      <b>UserID:</b>
+     </td>
+     <td class=l id='UserID_static'>%UserID%</td>
+     <td class="r" id="debug">
+      
+     </td>
+    </tr>
+    <tr>
+     <td class=r>
+      <b><en>Date and time</en><ru>Дата, время</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs DateTarget>%DateTarget%</cinputs>
+     </td>
+     <td class=r>
+      <b><en>Manager</en><ru>Менеджер</ru>:</b>
+     </td>
+     <td class=l>
+      <block_userselector>
+       <select class=filteritem id=UserID>
+        <loop_users>
+         <option id="%ID%" %selected%>%Firstname% %Surname%</option>
+        </loop_users>
+       </select>
+      </block_userselector>
+      <block_nouserselector>
+       %Firstname% %Surname%
+      </block_nouserselector>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Phone</en><ru>Номер телефона</ru>:</b>
+     </td>
+     <td class=l>
+      <block_phone_editor>
+       <cinputs Phone>%Phone%</cinputs>
+      </block_phone_editor>
+      <block_phone_hidden>
+       <ru>Скрыт</ru><en>Hidden</en>
+      </block_phone_hidden>
+     </td>
+     <td class=r>
+      <b>
+       <ru>Источник (площадка)</ru><en>Source</en>:
+      </b>
+     </td>
+     <td class=l>
+      <p>
+       <select class=filteritem id=SourceID>
+        <loop_customersources>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_customersources>
+       </select>
+      </p>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Contact name</en><ru>Имя контактного лица</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs ContactName>%ContactName%</cinputs>
+     </td>
+     <td class=r>
+      <b><en>Contact email</en><ru>E-mail</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs ContactEmail>%ContactEmail%</cinputs>
+     </td>
+    </tr>
+    
+    <tr class=hidden>
+     <td class=r>
+      <b>
+       <ru>Направление</ru>
+       <en>Direction</en>
+      </b>
+     </td>
+     <td class=l>
+      <p>
+       <select class=filteritem id=DirectionID>
+        <loop_calldirections>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_calldirections>
+       </select>
+      </p>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Cost</en><ru>Цена с учётом комиссии</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs Cost>%Cost%</cinputs> руб.
+     </td>
+     <td class=r>
+      <b>
+       <ru>Способ оплаты</ru><en>MethodOfPaymentID</en>:
+      </b>
+     </td>
+     <td class=l>
+      <p>
+       <select class=filteritem id=MethodOfPaymentID>
+        <loop_methodsofpayment>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_methodsofpayment>
+       </select>
+      </p>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b>
+       <ru>Подтип звонившего</ru><en>Customer subtype</en>:
+      </b>
+     </td>
+     <td class=l>
+      <p>
+       <select class="filteritem" id="CustomerSubtypeID" onclick="selectChange(this.id);" onchange="selectChange(this.id);">
+        <loop_customersubtypes>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_customersubtypes>
+       </select>
+      </p>
+     </td>
+     
+     <td class=fieldname>
+      <p><b>Посредник:</b></p>
+     </td>
+     <td class=fieldvalue>
+      <p>
+       <select id="MediatorID">
+        <loop_mediators>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_mediators>
+       </select>
+      </p>
+     </td>
+     
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+     <td class=r>
+      <b>
+       <ru>Рынок</ru><en>Market</en>:
+      </b>
+     </td>
+     <td class=l>
+      <p>
+       <select class="filteritem" id="MarketID" onclick="loadObjectDetails();" onchange="loadObjectDetails();">
+        <loop_markets>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_markets>
+       </select>
+      </p>
+     </td>
+     
+     <td class=r>
+      <b>Размер комиссии:</b>
+     </td>
+     <td class=l>
+      <cinputs AgentFee>%AgentFee%</cinputs>
+     </td>
+     
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>District</en><ru>Район</ru>:</b>
+     </td>
+     <td class=l>
+      <p>
+       <select class="filteritem" id="DistrictID">
+        <loop_districts>
+         <option id="%ID%" %selected%>%Description%</option>
+        </loop_districts>
+       </select>
+      </p>
+     </td>
+     <td class=r>
+      <b><en>Address</en><ru>Адрес</ru>:</b>
+     </td>
+     <td class=l>
+      <cinputs Address>%Address%</cinputs>
+     </td>
+    </tr>
+    
+    <tr>
+     <td class=r>
+      <b><en>Exchange option</en><ru>Обменный вариант</ru>:</b>
+     </td>
+     <td class=l colspan=4>
+      <cinputs ExchangeOption>%ExchangeOption%</cinputs>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <table>
+    <tr>
+     <td class=l colspan=4 id="objectdetails">
+      %objectdetails%
+     </td>
+    </tr>
+    
+    <tr class=t>
+     <td class=r>
+      <b><en>Comments</en><ru>Комментарии</ru>:</b>
+     </td>
+     <td class=l colspan=3>
+      <ctxts Status>%Status%</ctxts>
+     </td>
+    </tr>
+    
+   </table>
+  </td>
+ </tr>
+</table>

@@ -1,0 +1,32 @@
+<table class="graph">
+ <tr>
+  <td>
+   Просмотры:
+  </td>
+  <loop_cell3>
+   <td>
+    <div style="height: %h3%px;"></div>
+   </td>
+  </loop_cell3>
+ </tr>
+ <tr>
+  <td>
+   Заказы:
+  </td>
+  <loop_cell1>
+   <td>
+    <div style="height: %h1%px;"></div>
+   </td>
+  </loop_cell1>
+ </tr>
+ <tr>
+  <td>
+   Выручка:
+  </td>
+  <loop_cell2>
+   <td>
+    <div style="height: %h2%px;"></div>
+   </td>
+  </loop_cell2>
+ </tr>
+</table>

@@ -1,0 +1,4 @@
+<ru>Количество записей</ru><en>Number of entries</en>: %numrows%<br>
+<block_item>
+ %Item%, %Name%<br>
+</block_item>

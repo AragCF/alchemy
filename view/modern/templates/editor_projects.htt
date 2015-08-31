@@ -1,0 +1,656 @@
+<table class="editor project-%mode%" id=AddProject>
+ <tr class=hidden>
+  <td class=r>
+   <b>ID:</b>
+  </td>
+  <td class=l colspan=3>
+   <cinputs ID>%ID%</cinputs>
+  </td>
+ </tr>
+ <tr>
+  <td class=c id="fields" colspan=2>
+   <strict_OrderNumber_1>
+    <div class="field1" id="div_OrderNumber">
+     <div class=caption>
+      Заказ № %OrderNumber%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_OrderNumber_1>
+   
+   <strict_Firstname_1>
+    <div class="field1" id="div_Firstname">
+     <div class=caption>
+      %Surname% %Firstname% %Middlename%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Firstname_1>
+   
+   <strict_Address_1>
+    <div class="field1" id="div_Address">
+     <div class=caption>
+      Адрес:
+     </div>
+     <div class=input>
+      %City%,
+      %Street%,
+      %House%,
+      %Building%,
+      %Flat%,
+      %Comment%.
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Address_1>
+   
+   <strict_Phone_1>
+    <div class="field1" id="div_Phones">
+     <div class=caption>
+      %PhoneMain% %PhoneAux% %PhoneHome%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Phone_1>
+   
+   <strict_Email_1>
+    <div class="field1" id="div_Email">
+     <div class=caption>
+      %Email%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Email_1>
+   
+   
+   
+   <strict_SendSMS_1>
+    <div class="field1" id="div_SendSms">
+     <div class=subcaption>
+      Отправка смс: %SendSMS%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_SendSMS_1>
+   
+   <strict_DateFinish_1>
+    <div class="field" id="div_DateFinish">
+     <div class=caption>
+      Сдача:
+      %DateFinish%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_DateFinish_1>
+   
+   <strict_Cost_1>
+    <div class="field" id="div_Cost">
+     <div class=caption>
+      Сумма:
+      %Cost%
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Предоплата:
+      %CostPrepay%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Cost_1>
+   
+   <strict_Comment_1>
+    <div class="field" id="div_Comments">
+     <div class=caption>
+      <en>Comments</en><ru>Примечание</ru>:
+      %Description%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Comment_1>
+   
+   <strict_DateMeasure_1>
+    <div class="field" id="div_DateMeasure">
+     <div class=caption>
+      <en>Date of measure</en><ru>Замер</ru>:
+     </div>
+     <div class=input>
+      %DateMeasure%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_DateMeasure_1>
+   
+   <strict_DateInstall_1>
+    <div class="field" id="div_DateInstall">
+     <div class=caption>
+      <en>Date of installation</en><ru>Монтаж</ru>:
+      %DateInstall%
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_DateInstall_1>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <strict_Firstname_2>
+    <div class="field" id="div_Firstname">
+     <div class=caption>
+      Имя:
+     </div>
+     <div class=input>
+      <cinputs Firstname>%Firstname%</cinputs>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td>
+         <comctl div_Surname next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Firstname_2>
+   
+   <strict_Surname_1>
+   </strict_Surname_1>
+   <strict_Surname_2>
+    <div class="field" id="div_Surname">
+     <div class=caption>
+      Фамилия:
+     </div>
+     <div class=input>
+      <cinputs Surname>%Surname%</cinputs>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Firstname prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td class=hidden>
+         <comctl div_Middlename skip goToPageSkip arrow-step-over.png>Пропустить</comctl>
+        </td>
+        <td>
+         <comctl div_Middlename next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Surname_2>
+   
+   <strict_Middlename_1>
+   </strict_Middlename_1>
+   <strict_Middlename_2>
+    <div class="field" id="div_Middlename">
+     <div class=caption>
+      Отчество:
+     </div>
+     <div class=input>
+      <cinputs Middlename>%Middlename%</cinputs>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Surname prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td class=hidden>
+         <comctl div_Address skip goToPageSkip arrow-step-over.png>Пропустить</comctl>
+        </td>
+        <td>
+         <comctl div_Address next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Middlename_2>
+   
+   <strict_Address_2>
+    <div class="field" id="div_Address">
+     <div class=caption>
+      Введите адрес:
+     </div>
+     <div class=clrln></div>
+     <div class=subcaption>
+      Город:
+     </div>
+     <div class=input>
+      <cinputs City>%City%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Улица:
+     </div>
+     <div class=input>
+      <cinputs Street>%Street%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Дом:
+     </div>
+     <div class=input>
+      <cinputs House>%House%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Корпус:
+     </div>
+     <div class=input>
+      <cinputs Building>%Building%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Квартира:
+     </div>
+     <div class=input>
+      <cinputs Flat>%Flat%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Примечание:
+     </div>
+     <div class=input>
+      <cinputs Comment>%Comment%</cinputs>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Middlename prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td>
+         <comctl div_Email next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Address_2>
+   
+   <strict_Email_2>
+    <div class="field" id="div_Email">
+     <div class=caption>
+      Введите email клиента:
+     </div>
+     <div class=input>
+      <cinputs Email>%Email%</cinputs>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Address prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td class=hidden>
+         <comctl div_Phones skip goToPageSkip arrow-step-over.png>Пропустить</comctl>
+        </td>
+        <td>
+         <comctl div_Phones next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Email_2>
+   
+   <strict_Phone_2>
+    <div class="field" id="div_Phones">
+     <div class=caption>
+      Телефон клиента:
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Основной:
+     </div>
+     <div class=input>
+      <cinputs PhoneMain>%PhoneMain%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class="subcaption hide">
+      Дополнительный:
+     </div>
+     <div class="input hide">
+      <cinputs PhoneAux>%PhoneAux%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class="subcaption hide">
+      Домашний:
+     </div>
+     <div class="input hide">
+      <cinputs PhoneHome>%PhoneHome%</cinputs>
+     </div>
+     
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Email prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td>
+         <comctl div_OrderNumber next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Phone_2>
+   
+   
+   <strict_OrderNumber_2>
+    <div class="field" id="div_OrderNumber">
+     <div class=caption>
+      Введите номер заказа:
+     </div>
+     <div class=input>
+      <cinputs OrderNumber>%OrderNumber%</cinputs>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Phones prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td>
+         <comctl div_DateFinish next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_OrderNumber_2>
+   
+   <strict_DateFinish_2>
+    <div class="field" id="div_DateFinish">
+     <div class=caption>
+      Планируемая дата отгрузки:
+     </div>
+     <div class=input>
+      <calendar DateFinish>%DateFinish%</calendar>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_OrderNumber prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td class=hidden>
+         <comctl div_Cost skip goToPageSkip arrow-step-over.png>Пропустить</comctl>
+        </td>
+        <td>
+         <comctl div_Cost next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_DateFinish_2>
+   
+   <strict_Cost_2>
+    <div class="field" id="div_Cost">
+     <div class=caption>
+      Сумма договора:
+     </div>
+     <div class=input>
+      <cinputs Cost>%Cost%</cinputs>
+     </div>
+     
+     <div class=clrln></div>
+     <div class=subcaption>
+      Сумма предоплаты:
+     </div>
+     <div class=input>
+      <cinputs CostPrepay>%CostPrepay%</cinputs>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_DateFinish prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td>
+         <comctl div_Doors next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Cost_2>
+   
+   <strict_HasDoors_2>
+    <div class="field" id="div_Doors">
+     <div class=caption>
+      В заказе присутствуют двери-купе?
+     </div>
+     <div class="input hide">
+      <fcb HasDoors %HasDoors%><en>Has doors</en><ru>Есть двери-купе</ru></fcb>
+     </div>
+     
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Cost prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td>
+         <comctl div_Photos next goToPageSave-HasDoors-No document-page-next.png>Нет</comctl>
+        </td>
+        <td>
+         <comctl div_Photos next goToPageSave-HasDoors-Yes document-page-next.png>Да</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_HasDoors_2>
+   
+   <div class="field" id="div_Photos">
+    <div class=caption>
+     Загрузите фото:
+    </div>
+    
+    <div class=input>
+     <form id='uploadform' name='uploadform' target='uploadbuffer' enctype='multipart/form-data' method='post' action='index.php'>
+      <p>
+       <input type='hidden' name='action'     id='action' value='steps'>
+       <input type='file'   name='fileupload' id='fileupload' onchange='doupload();' accept_='application/vnd.ms-excel'>
+      </p>
+     </form>
+     <p>
+      <iframe name='uploadbuffer' id='uploadbuffer' onload='uploaded(this.id);' ></iframe>
+     </p>
+     <p id="status0"></p>
+    </div>
+    
+    <div class=buttons>
+     <table class="buttons_tbl">
+      <tr>
+       <td class=hidden>
+        <comctl div_Doors prev goToPageSave document-page-previous.png>Назад</comctl>
+       </td>
+       <td>
+        <comctl div_Finish next goToPageSave document-page-next.png>Далее</comctl>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class=clrln></div>
+   </div>
+   
+   
+   <div class="field" id="div_Finish">
+    <div class=caption>
+     Карточка клиента создана. Поздравляем.
+    </div>
+    
+    <div class=buttons>
+     <table class="buttons_tbl">
+      <tr>
+       <td class=hidden>
+        <comctl div_Photos prev goToPageSave document-page-previous.png>Назад</comctl>
+       </td>
+       <td>
+        <comctl popup_btn_saveandclose next popupBtnClick disk.png>Готово</comctl>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class=clrln></div>
+   </div>
+   
+   
+   <strict_SendSMS_2>
+    <div class="field" id="div_SendSms">
+     <div class="subcaption">
+      Отправка смс:
+     </div>
+     <div class=input>
+      <fcb SendSMS %SendSMS%>Отправлять смс-уведомления</fcb>
+     </div>
+     <div class=buttons>
+      <table class="buttons_tbl">
+       <tr>
+        <td class=hidden>
+         <comctl div_Phones prev goToPageSave document-page-previous.png>Назад</comctl>
+        </td>
+        <td>
+         <comctl div_OrderNumber next goToPageSave document-page-next.png>Далее</comctl>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_SendSMS_2>
+   
+   
+   
+   
+   
+   <strict_Comment_2>
+    <div class="field" id="div_Comments">
+     <div class=caption>
+      <en>Comments</en><ru>Комментарии</ru>:
+     </div>
+     <div class=input>
+      <ctxts Description>%Description%</ctxts>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_Comment_2>
+   
+   <strict_DateMeasure_2>
+    <div class="field" id="div_DateMeasure">
+     <div class=caption>
+      <en>Date of measure</en><ru>Дата замера</ru>:
+     </div>
+     <div class=input>
+      <calendar DateMeasure>%DateMeasure%</calendar>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_DateMeasure_2>
+   
+   <strict_DateInstall_2>
+    <div class="field" id="div_DateInstall">
+     <div class=caption>
+      <en>Date of installation</en><ru>Дата монтажа</ru>:
+     </div>
+     <div class=input>
+      <calendar DateInstall>%DateInstall%</calendar>
+     </div>
+     <div class=clrln></div>
+    </div>
+   </strict_DateInstall_2>
+   
+   
+   
+   <div class="field" id="div_Status">
+    <div class=caption>
+     Статус:
+    </div>
+    <div id=steps>
+     <loop_step>
+      <div class="step_%Mode%"><div class="floatl"><div class="round"></div><div class="vline %last%"></div></div><div class="stepdesc"><b>%DateTarget%</b> %Title% %Auxinfo%</div><div class="clrln"></div></div>
+     </loop_step>
+     <loop_stepa>
+      <a href="javascript:;" onclick="addProjectStep(%ProjectID%, %ID%);">
+       <div class="step_%Mode%"><div class="floatl"><div class="round"></div><div class="vline %last%"></div></div><div class="stepdesc">%Title%</div><div class="clrln"></div></div>
+      </a>
+     </loop_stepa>
+    </div>
+    <div class=clrln></div>
+   </div>
+   
+   
+  </td>
+ </tr>
+ 
+ <tr class=hidden>
+  <td class=l rowspan=6 id='participants_td'>
+   <div id='participants'>
+    <block_participants>
+     <loop_participants>
+      <div class='floatl' id='usr_%ID%'><table><tr><td>%Username%</td><td><comctl_po %ID%  removeProjectParticipant cross-script.png><ru>Удалить участника</ru><en>Remove participant</en></comctl_po></td></tr></table></div>
+     </loop_participants>
+     <div class='clrln'></div>
+     <p><ru>Добавить участника</ru><en>Add participant</en>:</p>
+     <p>
+      <select id='users'>
+       <loop_users>
+        <option id='%ID%'>%Username%</option>
+       </loop_users>
+      </select>
+     </p>
+     <div class='clrln'></div>
+     <comctl -1  addProjectParticipant user--plus.png><ru>Добавить участника</ru><en>Add participant</en></comctl>
+    </block_participants>
+   </div>
+  </td>
+ </tr>
+ 
+ <tr class=hidden>
+  <td class=r>
+   
+  </td>
+  <td class=l>
+   <comctl -1  addProject task--plus.png><ru>Создать проект</ru><en>Add project</en></comctl>
+  </td>
+ </tr>
+ <tr>
+  <td class=c id=result colspan=2>
+   
+  </td>
+ </tr>
+</table>

@@ -1,0 +1,324 @@
+<block_addproject_error_nofirstname>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Имя клиента не введено.</ru>
+  <en>Customer first name not set.</en>
+ </p>
+</block_addproject_error_nofirstname>
+
+<block_addproject_error_nocity>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Город не введён.</ru>
+  <en>City not set.</en>
+ </p>
+</block_addproject_error_nocity>
+
+<block_addproject_error_nophone>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Номер телефона не введён.</ru>
+  <en>Phone not set.</en>
+ </p>
+</block_addproject_error_nophone>
+
+<block_addproject_error_nostreet>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Улица не введена.</ru>
+  <en>Street not set.</en>
+ </p>
+</block_addproject_error_nostreet>
+
+<block_addproject_error_nophone>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Номер телефона не введён.</ru>
+  <en>Phone number not set.</en>
+ </p>
+</block_addproject_error_nophone>
+
+<block_addproject_error_noordernumber>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Номер заказа не введён.</ru>
+  <en>Order number not set.</en>
+ </p>
+</block_addproject_error_noordernumber>
+
+<block_addproject_error_nocost>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Стоимость заказа не введена.</ru>
+  <en>Order cost not set.</en>
+ </p>
+</block_addproject_error_nocost>
+
+
+
+<block_addmoney_error_novalue>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Значение не введено.</ru>
+  <en>Value not set.</en>
+ </p>
+</block_addmoney_error_novalue>
+
+<block_addmoney_error_nodate>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Дата не введена.</ru>
+  <en>Date not set.</en>
+ </p>
+</block_addmoney_error_nodate>
+
+<block_addmoney_error_unknown>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Произошла неизвестная ошибка. Вероятно, данные уже сохранены.</ru>
+  <en>Unknown error occured. Possibly data is already saved.</en>
+ </p>
+</block_addmoney_error_unknown>
+
+<block_addcall_error_novalue>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Комментарий не введён.</ru>
+  <en>Comment not set.</en>
+ </p>
+</block_addcall_error_novalue>
+
+<block_addcall_error_nophone>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Номер телефона не введён.</ru>
+  <en>Phone number not set.</en>
+ </p>
+</block_addcall_error_nophone>
+
+<block_addmoney_success>
+ <p>
+  <img src="%imgfolder%/tick.png">
+  <ru>Данные сохранены.</ru>
+  <en>Data saved.</en>
+ </p>
+</block_addmoney_success>
+
+<block_adduser_error_nousername>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Имя пользователя не введёно.</ru>
+  <en>Username not set.</en>
+ </p>
+</block_adduser_error_nousername>
+
+<block_adduser_error_noemail>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Email не введён.</ru>
+  <en>Email not set.</en>
+ </p>
+</block_adduser_error_noemail>
+
+<block_updatepassword_success>
+ <p>
+  <img src="%imgfolder%/tick.png">
+  <ru>Пароль обновлён.</ru>
+  <en>Password updated.</en>
+ </p>
+</block_updatepassword_success>
+
+<block_updatepassword_error_nopassword>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Пароль не введён.</ru>
+  <en>Password not set.</en>
+ </p>
+</block_updatepassword_error_nopassword>
+
+<block_error_nofloor>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Этаж не введён.</ru>
+  <en>Floor number not set.</en>
+ </p>
+</block_error_nofloor>
+
+<block_error_nofloors>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Кол-во этажей не введёно.</ru>
+  <en>Floors count not set.</en>
+ </p>
+</block_error_nofloors>
+
+<block_error_norooms>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Кол-во комнат не введёно.</ru>
+  <en>Rooms count not set.</en>
+ </p>
+</block_error_norooms>
+
+
+<block_savefirst_nbs>
+ <ru>Прежде, чем добавлять квартиры, необходимо сохранить карточку. Для этого нажмите кнопку "Сохранить".</ru>
+ <en>Before you will be able to save apartments please save data by pressing "Save" button.</en>
+</block_savefirst_nbs>
+
+<block_error_nouserrights>
+ <p>
+  <img src="%imgfolder%/cross-script.png">
+  <ru>Недостаточно прав для сохранения информации. Вы можете сохранять только свои записи.</ru>
+  <en>Not enough rights to save data. You can save only your records.</en>
+ </p>
+</block_error_nouserrights>
+
+
+
+
+<block_error_nodatemeasure>
+ <img src="%imgfolder%/cross-script.png"> Дата замера не введена
+</block_error_nodatemeasure>
+<block_error_nodateinstall>
+ <img src="%imgfolder%/cross-script.png"> Дата монтажа не введена
+</block_error_nodateinstall>
+<block_error_nopictures>
+ <img src="%imgfolder%/cross-script.png"> Фотографии не загружены
+</block_error_nopictures>
+
+
+<block_error_upload>
+ <en>Upload error</en><ru>Ошибка при загрузке файла</ru>
+</block_error_upload>
+
+
+
+
+
+
+<block_step_1>
+1) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% поступил в работу.
+</block_step_1>
+<block_step_1_email>
+1) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% от %DateAdded% на сумму %Cost% поступил в работу. Дата: %DateTarget%.
+</block_step_1_email>
+
+<block_step_2>
+2) %Firstname% %Middlename%, замер по вашему Заказу №%OrderNumber% назначен на %DateAux% в %TimeAux%. 
+</block_step_2>
+<block_step_2_email>
+2) %Firstname% %Middlename%, замер по вашему Заказу №%OrderNumber% от %DateAdded% назначен на %DateAux% в %TimeAux%. 
+</block_step_2_email>
+
+<block_step_3>
+3) %Firstname% %Middlename%, по Заказу №%OrderNumber% произведён замер.
+</block_step_3>
+<block_step_3_email>
+3) %Firstname% %Middlename%, по вашему Заказу №%OrderNumber% от %DateAdded% произведен замер помещения.
+</block_step_3_email>
+
+<block_step_4>
+4) %Firstname% %Middlename%, по Заказу №%OrderNumber% проект согласован.
+</block_step_4>
+<block_step_4_email>
+4) %Firstname% %Middlename%, по вашему Заказу №%OrderNumber% от %DateAdded% проект согласован.
+</block_step_4_email>
+
+<block_step_5>
+5) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% обработан технологом.
+</block_step_5>
+<block_step_5_email>
+5) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% от %DateAdded% обработан технологом.
+</block_step_5_email>
+
+<block_step_6>
+6) %Firstname% %Middlename%, все материалы и комплектующие по вашему Заказу №%OrderNumber% поступили на произвоство.
+</block_step_6>
+<block_step_6_email>
+6) %Firstname% %Middlename%, все материалы и комплектующие по вашему Заказу №%OrderNumber% поступили на произвоство.
+</block_step_6_email>
+
+<block_step_7>
+7) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% поступил в производственный цех.
+</block_step_7>
+<block_step_7_email>
+7) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% от %DateAdded% поступил в производственный цех.
+</block_step_7_email>
+
+<block_step_8>
+8) %Firstname% %Middlename%, материал по вашему Заказу №%OrderNumber% распилен.
+</block_step_8>
+<block_step_8_email>
+8) %Firstname% %Middlename%, материал по вашему Заказу №%OrderNumber% от %DateAdded% распилен.
+</block_step_8_email>
+
+<block_step_9>
+9) %Firstname% %Middlename%, заготовки изделий по вашему Заказу №%OrderNumber% закромлены.
+</block_step_9>
+<block_step_9_email>
+9) %Firstname% %Middlename%, заготовки изделий по вашему Заказу №%OrderNumber% от %DateAdded% закромлены.
+</block_step_9_email>
+
+<block_step_10>
+10) %Firstname% %Middlename%, по вашему Заказу №%OrderNumber% закончена присадка заготовок.
+</block_step_10>
+<block_step_10_email>
+10) %Firstname% %Middlename%, по вашему Заказу №%OrderNumber% от %DateAdded% закончена присадка заготовок.
+</block_step_10_email>
+
+<block_step_11>
+11) %Firstname% %Middlename%, по вашему Заказу №%OrderNumber% произведена предварительная сборка и упаковка деталей.
+</block_step_11>
+<block_step_11_email>
+11) %Firstname% %Middlename%, по вашему Заказу №%OrderNumber% от %DateAdded% произведена предварительная сборка и упаковка деталей.
+</block_step_11_email>
+
+<block_step_12>
+12) %Firstname% %Middlename%, двери-купе по вашему Заказу №%OrderNumber% изготовлены.
+</block_step_12>
+<block_step_12_email>
+12) %Firstname% %Middlename%, двери-купе по вашему Заказу №%OrderNumber% от %DateAdded% изготовлены.
+</block_step_12_email>
+
+<block_step_13>
+13) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% полностью готов к отгрузке.
+</block_step_13>
+<block_step_13_email>
+13) %Firstname% %Middlename%, ваш Заказ №%OrderNumber% от %DateAdded% полностью готов к отгрузке.
+</block_step_13_email>
+
+<block_step_14>
+14) %Firstname% %Middlename%, доставка и монтаж вашего Заказа №%OrderNumber% состоится %DateAux% в %TimeAux%.
+</block_step_14>
+<block_step_14_email>
+14) %Firstname% %Middlename%, доставка и монтаж вашего Заказа №%OrderNumber% от %DateAdded% состоится %DateAux% в %TimeAux%.
+</block_step_14_email>
+
+<block_step_15>
+15) %Firstname% %Middlename%, поздравляем вас с завершением работ по Заказу №%OrderNumber%. Отзывы и комментарии о нашей работе вы можете оставить в <a href='%FullLink%' target="_blank">личном кабинете по ссылке</a>.
+</block_step_15>
+<block_step_15_email>
+15) %Firstname% %Middlename%, поздравляем вас с завершением работ по Заказу №%OrderNumber% от %DateAdded%. Отзывы и комментарии о нашей работе вы можете оставить в <a href='%FullLink%' target="_blank">личном кабинете по ссылке</a>.
+</block_step_15_email>
+
+
+
+<block_step_footer>
+ Смотрите фотоотчёт здесь: %FullLink%.
+</block_step_footer>
+<block_step_footer_email>
+ Подробную информацию об этапах прохождения заказа смотрите <a href='%FullLink%' target="_blank">в личном кабинете по ссылке %FullLink%</a>. Дата: %DateTarget%.<br><br>
+ 
+ Если вы хотите отключить смс-уведомления об этапах производства заказа - обратитесь к вашему дизайнеру.<br><br>
+ 
+ Производственная компания "Алхимия Мебели", тел. 424-56-06, 995-09-38.<br>
+ Санкт-Петербург, ул. Заставская, дом 33, пом. 14.101.<br>
+ алхимия-мебели.рф
+</block_step_footer_email>
+
+
+
+<block_mail-newproject-admin>
+ Админское уведомление для заказа N %ID%
+</block_mail-newproject-admin>

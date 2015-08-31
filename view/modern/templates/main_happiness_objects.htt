@@ -1,0 +1,53 @@
+<block_no>
+ <en>No</en><ru>Нет</ru>
+</block_no>
+
+<block_norows>
+ <p><en>No data</en><ru>Нет данных</ru></p>
+</block_norows>
+
+<loop_table>
+ <table class=tableview>
+  <tr class=row1 id=tableheader>
+   <th>ID</th>
+   <th><en>Date</en><ru>Дата</ru></th>
+   <th><en>Market</en><ru>Рынок</ru></th>
+   <th><en>Rooms</en><ru>Комнат</ru></th>
+   <th><en>District</en><ru>Район</ru></th>
+   <th><en>HouseType</en><ru>Планировка</ru></th>
+   <th><en>Address</en><ru>Адрес</ru></th>
+   <th title="Обменный вариант"><en>Exchange option</en><ru>Обмен</ru></th>
+   <th><en>Cost</en><ru>Цена</ru></th>
+   <th><en>User</en><ru>Менеджер</ru></th>
+   <th colspan=3><en>Tools</en><ru>Инструменты</ru></th>
+  </tr>
+  <loop_table_row>
+   <tr class=row%c%>
+    <td id='ID_%ID%'>%ID%</td>
+    <td>%Date%</td>
+    <td>%Market%</td>
+    <td>%RoomsTotal%</td>
+    <td>%District%</td>
+    <td>%HouseType%</td>
+    <td>%Address%</td>
+    <td>%ExchangeOption%</td>
+    <td>%Cost%</td>
+    <td>%Firstname% %Surname%</td>
+    <td>
+     <comctl %id%  editObject pencil.png><ru>Правка</ru><en>Edit</en></comctl>
+    </td>
+    <block_adminonly>
+     <td>
+      <comctl %id%  deleteObject cross-script.png><ru>Удалить</ru><en>Delete</en></comctl>
+     </td>
+    </block_adminonly>
+   </tr>
+   <tr class=row%c%>
+    <td colspan=12>
+     %objects%
+    </td>
+   </tr>
+  </loop_table_row>
+ </table>
+</loop_table>
+
